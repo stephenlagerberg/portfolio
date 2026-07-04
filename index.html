@@ -61,7 +61,6 @@
       font-family: Georgia, serif;
     }
 
-    /* FIX: Changed opacity to 1 so content is always visible */
     .fade-in-up {
       opacity: 1;
       transform: translateY(0);
@@ -224,10 +223,12 @@
   <!-- ═══════ STICKY NAV ═══════ -->
   <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 bg-navy-dark shadow-lg">
     <div class="max-w-[1100px] mx-auto px-4 md:px-6 flex items-center justify-between h-16">
-      <!-- FIX: Replaced broken image with text logo -->
-      <a href="#hero-section" class="flex items-center text-white text-lg md:text-xl font-heading font-bold hover:text-gold-light transition-colors" style="text-decoration: none;">
-        Dr. Stephen E. Lagerberg
+      
+      <!-- LOGO IMAGE ADDED HERE -->
+      <a href="#hero-section" style="display: inline-flex; align-items: center; text-decoration: none;">
+        <img src="logo.png" alt="MentalAltitude Consulting Logo" style="height: 60px; width: auto; max-width: 100%;">
       </a>
+
       <div class="hidden md:flex items-center gap-6">
         <a href="#about-section" class="nav-link text-white text-sm hover:text-gold-light">About</a>
         <a href="#experience-section" class="nav-link text-white text-sm hover:text-gold-light">Experience</a>
@@ -985,4 +986,5 @@
   </script>
 </body>
 </html>
+
 
