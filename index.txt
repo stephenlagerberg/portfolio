@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title data-id="th-modified">Dr. Stephen E. Lagerberg — Professional Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            navy: '#1B3A5C',
+            'navy-dark': '#0f2035',
+            gold: '#C5973A',
+            'gold-light': '#d4ac5a',
+            'gold-dark': '#a87e2e',
+            steel: '#E8EEF5',
+            muted: '#5a6a7a',
+            txt: '#1a1a1a',
+            teal: '#0F766E',
+            'teal-light': '#14B8A6',
+            'teal-dark': '#0D5E58',
+            'teal-bg': '#F0FDFA',
+          },
+          fontFamily: {
+            heading: ['Georgia', 'serif'],
+            body: ['Calibri', 'Arial', 'sans-serif'],
+            mono: ['Consolas', 'Monaco', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+  <script src="https://unpkg.com/lucide@latest" defer></script>
+  <style>
+    :root {
+      --navy: #1B3A5C;
+      --navy-dark: #0f2035;
+      --gold: #C5973A;
+      --gold-light: #d4ac5a;
+      --steel: #E8EEF5;
+      --white: #FFFFFF;
+      --txt: #1a1a1a;
+      --muted: #5a6a7a;
+      --teal: #0F766E;
+      --teal-light: #14B8A6;
+      --teal-bg: #F0FDFA;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Calibri, Arial, sans-serif;
+      color: var(--txt);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3, h4, h5 {
+      font-family: Georgia, serif;
+    }
+
+    .fade-in-up {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    }
+    .fade-in-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .hero-pattern {
+      background-image:
+        repeating-linear-gradient(
+          45deg,
+          transparent,
+          transparent 40px,
+          rgba(197,151,58,0.04) 40px,
+          rgba(197,151,58,0.04) 41px
+        );
+    }
+
+    .timeline-line {
+      position: absolute;
+      left: 23px;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: var(--navy);
+    }
+
+    @media (min-width: 768px) {
+      .timeline-line {
+        left: 23px;
+      }
+    }
+
+    .timeline-node {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background: var(--navy);
+      border: 3px solid var(--white);
+      position: absolute;
+      left: 16px;
+      top: 24px;
+      z-index: 2;
+      box-shadow: 0 0 0 2px var(--navy);
+    }
+
+    .timeline-node.current {
+      background: var(--gold);
+      box-shadow: 0 0 0 2px var(--gold), 0 0 12px rgba(197,151,58,0.5);
+      animation: pulse-gold 2s infinite;
+    }
+
+    @keyframes pulse-gold {
+      0%, 100% { box-shadow: 0 0 0 2px var(--gold), 0 0 6px rgba(197,151,58,0.4); }
+      50% { box-shadow: 0 0 0 2px var(--gold), 0 0 18px rgba(197,151,58,0.7); }
+    }
+
+    .course-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+      border-top: 3px solid var(--navy);
+    }
+    .course-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 28px rgba(27,58,92,0.15);
+      border-top-color: var(--gold);
+      border-top-width: 5px;
+    }
+
+    .pub-card {
+      border-left: 4px solid var(--navy);
+      transition: border-left-width 0.3s ease, box-shadow 0.3s ease;
+    }
+    .pub-card:hover {
+      border-left-width: 8px;
+      box-shadow: 0 8px 24px rgba(27,58,92,0.12);
+    }
+
+    .monogram-ring {
+      box-shadow: 0 0 40px rgba(197,151,58,0.3), 0 0 80px rgba(197,151,58,0.1);
+    }
+
+    .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease;
+    }
+    .accordion-content.open {
+      max-height: 2000px;
+    }
+
+    #back-to-top {
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    #back-to-top.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .nav-link {
+      position: relative;
+      transition: color 0.2s ease;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+    .nav-link.active {
+      color: var(--gold) !important;
+    }
+    .nav-link.active::after {
+      width: 100%;
+    }
+
+    .stat-number {
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* AI Certification Card Styles */
+    .ai-cert-card {
+      border-left: 4px solid var(--teal);
+      background: var(--teal-bg);
+      transition: transform 0.3s ease, box-shadow 0.3s ease, border-left-width 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    .ai-cert-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 80px;
+      height: 80px;
+      background: radial-gradient(circle at top right, rgba(15,118,110,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .ai-cert-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(15,118,110,0.15);
+      border-left-width: 6px;
+    }
+
+    @keyframes shimmer-teal {
+      0%, 100% { box-shadow: 0 0 0 2px var(--teal), 0 0 6px rgba(15,118,110,0.3); }
+      50% { box-shadow: 0 0 0 2px var(--teal), 0 0 14px rgba(15,118,110,0.5); }
+    }
+
+    .ai-badge-new {
+      animation: shimmer-teal 2.5s infinite;
+    }
+  </style>
+<meta property="og:title" content="Dr. Stephen E. Lagerberg — Professional Portfolio" data-id="th-modified"><meta property="og:image" content="https://tiiny.host/assets/logo-purple-bg.png" data-id="th-modified"><meta property="og:image:width" content="1501" data-id="th-modified"><meta property="og:image:height" content="1501" data-id="th-modified"><meta property="og:image:type" content="image/png" data-id="th-modified"><meta property="og:url" content="https://stephen-lagerberg.tiiny.site/" data-id="th-modified"><meta property="og:type" content="website" data-id="th-modified"><script defer data-domain="stephen-lagerberg.tiiny.site" src="https://analytics.tiiny.net/js/plausible.js"></script><script type="text/javascript" src="https://tiiny.host/ad-script.js"></script></head>
+<body data-id="0" class="bg-white">
+  <app-icon data-id="1" hidden data-icon="graduation-cap" data-palette="Dark"></app-icon>
+
+  <!-- ═══════ STICKY NAV ═══════ -->
+  <nav data-id="2" id="navbar-x7kq" class="fixed top-0 left-0 right-0 z-50 bg-navy-dark shadow-lg">
+    <div data-id="3" class="max-w-[1100px] mx-auto px-4 md:px-6 flex items-center justify-between h-16">
+      <a href="#hero-section" style="display: inline-flex; align-items: center; text-decoration: none;">
+  <img src="logo.png" alt="MentalAltitude Consulting Logo" style="height: 60px; width: auto; max-width: 100%;">
+</a>
+      <div data-id="5" class="hidden md:flex items-center gap-6">
+        <a data-id="6" href="#about-section" class="nav-link text-white text-sm hover:text-gold-light">About</a>
+        <a data-id="7" href="#experience-section" class="nav-link text-white text-sm hover:text-gold-light">Experience</a>
+        <a data-id="8" href="#teaching-section" class="nav-link text-white text-sm hover:text-gold-light">Teaching</a>
+        <a data-id="9" href="#publications-section" class="nav-link text-white text-sm hover:text-gold-light">Publications</a>
+        <a data-id="10" href="#credentials-section" class="nav-link text-white text-sm hover:text-gold-light">Credentials</a>
+        <a data-id="11" href="#development-section" class="nav-link text-white text-sm hover:text-gold-light">Development</a>
+        <a data-id="12" href="#contact-section" class="nav-link text-white text-sm hover:text-gold-light">Contact</a>
+      </div>
+      <button data-id="13" id="mobile-menu-btn-v2x1" class="md:hidden p-2 text-white" aria-label="Open menu">
+        <i data-id="14" data-lucide="menu" class="w-6 h-6"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div data-id="15" id="mobile-menu-n8rz" class="hidden fixed inset-0 bg-navy-dark z-[60] flex flex-col p-6">
+    <div data-id="16" class="flex justify-between items-center mb-8">
+      <span data-id="17" class="text-white font-heading text-lg font-bold">Dr. Stephen Lagerberg</span>
+      <button data-id="18" id="mobile-menu-close-k4wj" class="p-2 text-white" aria-label="Close menu">
+        <i data-id="19" data-lucide="x" class="w-6 h-6"></i>
+      </button>
+    </div>
+    <div data-id="20" class="flex flex-col gap-5">
+      <a data-id="21" href="#about-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">About</a>
+      <a data-id="22" href="#experience-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Experience</a>
+      <a data-id="23" href="#teaching-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Teaching</a>
+      <a data-id="24" href="#publications-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Publications</a>
+      <a data-id="25" href="#credentials-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Credentials</a>
+      <a data-id="26" href="#development-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Development</a>
+      <a data-id="27" href="#contact-section" class="mobile-nav-link text-white text-xl font-heading hover:text-gold-light transition-colors">Contact</a>
+    </div>
+  </div>
+
+  <main data-id="28">
+    <!-- ═══════ HERO SECTION ═══════ -->
+    <section data-id="29" id="hero-section" class="min-h-screen flex flex-col justify-center relative overflow-hidden pt-16" style="background: linear-gradient(135deg, #1B3A5C 0%, #0f2035 100%);">
+      <div data-id="30" class="hero-pattern absolute inset-0"></div>
+      <div data-id="31" class="relative z-10 max-w-[1100px] mx-auto px-5 md:px-6 w-full py-12 md:py-0">
+        <div data-id="32" class="flex flex-col md:flex-row items-center gap-8 md:gap-12">
+          <!-- Left Content -->
+          <div data-id="33" class="w-full md:w-[60%] text-center md:text-left">
+            <p data-id="34" id="eyebrow-g4hs" class="text-gold font-body text-xs md:text-sm tracking-[0.2em] uppercase mb-3 font-semibold">Performance Psychologist · Educator · Veteran</p>
+            <h1 data-id="35" id="hero-name-r9kl" class="font-heading text-3xl md:text-5xl lg:text-[3.4rem] text-white leading-tight mb-4">Stephen E. Lagerberg, Ph.D.</h1>
+            <p data-id="36" id="hero-subtitle-w2mn" class="text-gold-light text-base md:text-lg mb-3 font-body">Air Traffic Control Professional | University Faculty | U.S. Navy Veteran</p>
+            <p data-id="37" class="text-white/80 text-sm mb-5 font-body">📍 Pharr, Texas</p>
+            <p data-id="38" id="hero-summary-p8vq" class="text-white/75 text-sm md:text-base leading-relaxed mb-8 max-w-xl mx-auto md:mx-0 font-body">
+              Experienced Air Traffic Manager and Adjunct Professor with a strong background in aviation operations, air traffic control, and performance psychology. Career spans military, commercial, and academic sectors, with expertise in situational awareness, decision-making, and leadership development. Research centers on air traffic controller well-being, stress management, and human resilience, with peer-reviewed publications addressing burnout and psychological health in aviation professionals. Now integrating applied AI capabilities — certified through Google, IBM, and LinkedIn Learning — into human factors research, performance psychology practice, and aviation consulting, bridging behavioral science with responsible AI application to enhance operational effectiveness and workforce well-being.
+            </p>
+            <div data-id="39" class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+              <a data-id="40" href="#publications-section" class="inline-block bg-gold text-navy-dark font-bold text-sm px-6 py-3 rounded-lg hover:bg-gold-light transition-colors text-center min-h-[44px] flex items-center justify-center">View Publications</a>
+              <a data-id="41" href="#credentials-section" class="inline-block border-2 border-white text-white font-bold text-sm px-6 py-3 rounded-lg hover:bg-white/10 transition-colors text-center min-h-[44px] flex items-center justify-center">View Credentials</a>
+              <a data-id="42" href="https://www.linkedin.com/in/stephen-lagerberg-ph-d-a32a302a" target="_blank" rel="noopener noreferrer" class="inline-block border-2 border-gold/60 text-gold font-bold text-sm px-6 py-3 rounded-lg hover:bg-gold/10 transition-colors text-center min-h-[44px] flex items-center justify-center">LinkedIn ↗</a>
+            </div>
+          </div>
+          <!-- Right Monogram -->
+          <div data-id="43" class="w-full md:w-[40%] flex justify-center mt-6 md:mt-0">
+            <div data-id="44" class="monogram-ring w-48 h-48 md:w-64 md:h-64 lg:w-72 lg:h-72 rounded-full bg-navy-dark border-4 border-gold flex flex-col items-center justify-center">
+              <span data-id="45" class="font-heading text-gold text-5xl md:text-7xl lg:text-8xl font-bold leading-none">SEL</span>
+              <span data-id="46" class="font-heading text-gold text-lg md:text-xl mt-1 tracking-wider">Ph.D.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat Strip -->
+      <div data-id="47" id="stat-strip-j5bz" class="relative z-10 mt-12 md:mt-16 bg-navy-dark/80 backdrop-blur-sm border-t border-gold/20">
+        <div data-id="48" class="max-w-[1100px] mx-auto px-5 md:px-6 py-8 grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+          <div data-id="49">
+            <span data-id="50" class="stat-number text-gold font-heading text-3xl md:text-4xl font-bold" data-target="12">0</span>
+            <p data-id="51" class="text-white/70 text-sm mt-1 font-body">Years — U.S. Navy Service</p>
+          </div>
+          <div data-id="52">
+            <span data-id="53" class="stat-number text-gold font-heading text-3xl md:text-4xl font-bold" data-target="9">0</span>
+            <p data-id="54" class="text-white/70 text-sm mt-1 font-body">Courses Taught at GCU</p>
+          </div>
+          <div data-id="55">
+            <span data-id="56" class="stat-number text-gold font-heading text-3xl md:text-4xl font-bold" data-target="2">0</span>
+            <p data-id="57" class="text-white/70 text-sm mt-1 font-body">Peer-Reviewed Publications</p>
+          </div>
+          <div data-id="58">
+            <span data-id="59" class="stat-number text-gold font-heading text-3xl md:text-4xl font-bold" data-target="3">0</span>
+            <p data-id="60" class="text-white/70 text-sm mt-1 font-body">APA Divisions — Active Member</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ ABOUT (anchor) ═══════ -->
+    <div data-id="61" id="about-section" class="h-0"></div>
+
+    <!-- ═══════ PROFESSIONAL EXPERIENCE ═══════ -->
+    <section data-id="62" id="experience-section" class="py-16 md:py-24 bg-white">
+      <div data-id="63" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="64" class="text-center mb-12 fade-in-up">
+          <h2 data-id="65" id="exp-title-q2wf" class="font-heading text-2xl md:text-3xl text-navy font-bold mb-3">Professional Experience</h2>
+          <div data-id="66" class="w-16 h-1 bg-gold mx-auto rounded"></div>
+        </div>
+
+        <div data-id="67" class="relative pl-12 md:pl-16">
+          <div data-id="68" class="timeline-line"></div>
+
+          <!-- Entry 1 -->
+          <div data-id="69" class="relative mb-12 fade-in-up">
+            <div data-id="70" class="timeline-node current"></div>
+            <div data-id="71" class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div data-id="72" class="flex flex-wrap items-center gap-2 mb-2">
+                <span data-id="73" class="text-2xl">🎓</span>
+                <span data-id="74" class="bg-gold text-navy-dark text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">Current</span>
+              </div>
+              <h3 data-id="75" class="font-heading text-lg md:text-xl text-navy font-bold">Adjunct Professor — Psychology</h3>
+              <p data-id="76" class="text-muted text-sm mb-3 font-body">Grand Canyon University | March 2022–Present | Phoenix, AZ (Remote)</p>
+              <ul data-id="77" class="space-y-2 text-sm text-txt font-body">
+                <li data-id="78" class="flex gap-2"><span data-id="79" class="text-gold mt-0.5 shrink-0">•</span><span data-id="80">Instruct nine undergraduate and graduate psychology course sections including PSY-5350TE Adolescent Psychology for Coaches and PSY-5360TE Sports Psychology for Coaches</span></li>
+                <li data-id="81" class="flex gap-2"><span data-id="82" class="text-gold mt-0.5 shrink-0">•</span><span data-id="83">Design and deliver asynchronous online learning experiences for adult learners in both undergraduate and graduate programs</span></li>
+                <li data-id="84" class="flex gap-2"><span data-id="85" class="text-gold mt-0.5 shrink-0">•</span><span data-id="86">Develop syllabi, discussion frameworks, assessments, and rubrics aligned with APA and program accreditation standards</span></li>
+                <li data-id="87" class="flex gap-2"><span data-id="88" class="text-gold mt-0.5 shrink-0">•</span><span data-id="89">Apply performance psychology principles to curriculum design serving professionals in high-stakes operational environments</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 2 -->
+          <div data-id="90" class="relative mb-12 fade-in-up">
+            <div data-id="91" class="timeline-node current"></div>
+            <div data-id="92" class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div data-id="93" class="flex flex-wrap items-center gap-2 mb-2">
+                <span data-id="94" class="text-2xl">✈️</span>
+                <span data-id="95" class="bg-gold text-navy-dark text-xs font-bold px-2 py-0.5 rounded uppercase tracking-wide">Current</span>
+              </div>
+              <h3 data-id="96" class="font-heading text-lg md:text-xl text-navy font-bold">Air Traffic Manager</h3>
+              <p data-id="97" class="text-muted text-sm mb-3 font-body">Robinson Aviation (RVA), Inc. | October 2021–Present | McAllen Texas International Airport</p>
+              <ul data-id="98" class="space-y-2 text-sm text-txt font-body">
+                <li data-id="99" class="flex gap-2"><span data-id="100" class="text-gold mt-0.5 shrink-0">•</span><span data-id="101">Lead air traffic management operations at McAllen Texas International Airport</span></li>
+                <li data-id="102" class="flex gap-2"><span data-id="103" class="text-gold mt-0.5 shrink-0">•</span><span data-id="104">Oversee operational safety, regulatory compliance, and personnel performance in a fast-paced aviation environment</span></li>
+                <li data-id="105" class="flex gap-2"><span data-id="106" class="text-gold mt-0.5 shrink-0">•</span><span data-id="107">Apply human factors and performance psychology principles to support controller effectiveness and error reduction</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 3 -->
+          <div data-id="108" class="relative mb-12 fade-in-up">
+            <div data-id="109" class="timeline-node"></div>
+            <div data-id="110" class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div data-id="111" class="flex items-center gap-2 mb-2">
+                <span data-id="112" class="text-2xl">🗼</span>
+              </div>
+              <h3 data-id="113" class="font-heading text-lg md:text-xl text-navy font-bold">Air Traffic Control Tower Supervisor</h3>
+              <p data-id="114" class="text-muted text-sm mb-3 font-body">DynCorp International | 2020–2021</p>
+              <ul data-id="115" class="space-y-2 text-sm text-txt font-body">
+                <li data-id="116" class="flex gap-2"><span data-id="117" class="text-gold mt-0.5 shrink-0">•</span><span data-id="118">Supervised air traffic control tower operations, ensuring safety and regulatory compliance</span></li>
+                <li data-id="119" class="flex gap-2"><span data-id="120" class="text-gold mt-0.5 shrink-0">•</span><span data-id="121">Provided direct leadership and performance oversight for ATC personnel</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Entry 4 -->
+          <div data-id="122" class="relative mb-4 fade-in-up">
+            <div data-id="123" class="timeline-node"></div>
+            <div data-id="124" class="bg-white border border-gray-200 rounded-xl p-5 md:p-6 shadow-sm hover:shadow-md transition-shadow">
+              <div data-id="125" class="flex items-center gap-2 mb-2">
+                <span data-id="126" class="text-2xl">⚓</span>
+              </div>
+              <h3 data-id="127" class="font-heading text-lg md:text-xl text-navy font-bold">Flight Planning Chief</h3>
+              <p data-id="128" class="text-muted text-sm mb-3 font-body">United States Navy | 2007–2019</p>
+              <ul data-id="129" class="space-y-2 text-sm text-txt font-body">
+                <li data-id="130" class="flex gap-2"><span data-id="131" class="text-gold mt-0.5 shrink-0">•</span><span data-id="132">Served twelve years as a Naval Flight Planning Chief, managing mission-critical aviation planning operations</span></li>
+                <li data-id="133" class="flex gap-2"><span data-id="134" class="text-gold mt-0.5 shrink-0">•</span><span data-id="135">Coordinated complex flight operations and logistics in support of Naval aviation missions</span></li>
+                <li data-id="136" class="flex gap-2"><span data-id="137" class="text-gold mt-0.5 shrink-0">•</span><span data-id="138">Led teams responsible for flight plan preparation, airspace coordination, and operational risk management</span></li>
+                <li data-id="139" class="flex gap-2"><span data-id="140" class="text-gold mt-0.5 shrink-0">•</span><span data-id="141">Applied expertise in aviation regulations, crew coordination, and operational safety protocols throughout multiple duty assignments</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ TEACHING PORTFOLIO ═══════ -->
+    <section data-id="142" id="teaching-section" class="py-16 md:py-24 bg-steel">
+      <div data-id="143" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="144" class="text-center mb-6 fade-in-up">
+          <h2 data-id="145" id="teach-title-h3nw" class="font-heading text-2xl md:text-3xl text-navy font-bold mb-3">Teaching Portfolio</h2>
+          <div data-id="146" class="w-16 h-1 bg-gold mx-auto rounded mb-6"></div>
+          <p data-id="147" class="text-muted text-sm md:text-base max-w-2xl mx-auto font-body">Adjunct Professor at Grand Canyon University since March 2022, delivering undergraduate and graduate instruction across nine psychology course sections.</p>
+        </div>
+
+        <div data-id="148" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 mt-10">
+          <!-- Course 1 -->
+          <div data-id="149" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="150" class="font-mono text-gold text-sm font-bold mb-1">PSY-357</p>
+            <h3 data-id="151" class="font-heading text-navy font-bold text-base mb-2">Lifespan Development</h3>
+            <div data-id="152" class="flex items-center justify-between">
+              <span data-id="153" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="154" class="text-xl">🌱</span>
+            </div>
+          </div>
+          <!-- Course 2 -->
+          <div data-id="155" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="156" class="font-mono text-gold text-sm font-bold mb-1">PSY-402</p>
+            <h3 data-id="157" class="font-heading text-navy font-bold text-base mb-2">Cognitive Neuroscience</h3>
+            <div data-id="158" class="flex items-center justify-between">
+              <span data-id="159" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="160" class="text-xl">🧠</span>
+            </div>
+          </div>
+          <!-- Course 3 -->
+          <div data-id="161" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="162" class="font-mono text-gold text-sm font-bold mb-1">PSY-410</p>
+            <h3 data-id="163" class="font-heading text-navy font-bold text-base mb-2">Psychology of Coaching</h3>
+            <div data-id="164" class="flex items-center justify-between">
+              <span data-id="165" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="166" class="text-xl">🏆</span>
+            </div>
+          </div>
+          <!-- Course 4 -->
+          <div data-id="167" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="168" class="font-mono text-gold text-sm font-bold mb-1">PSY-425</p>
+            <h3 data-id="169" class="font-heading text-navy font-bold text-base mb-2">Leadership and Team Building</h3>
+            <div data-id="170" class="flex items-center justify-between">
+              <span data-id="171" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="172" class="text-xl">👥</span>
+            </div>
+          </div>
+          <!-- Course 5 -->
+          <div data-id="173" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="174" class="font-mono text-gold text-sm font-bold mb-1">PSY-452</p>
+            <h3 data-id="175" class="font-heading text-navy font-bold text-base mb-2">Experimental Psychology</h3>
+            <div data-id="176" class="flex items-center justify-between">
+              <span data-id="177" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="178" class="text-xl">🔬</span>
+            </div>
+          </div>
+          <!-- Course 6 -->
+          <div data-id="179" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="180" class="font-mono text-gold text-sm font-bold mb-1">PSY-470</p>
+            <h3 data-id="181" class="font-heading text-navy font-bold text-base mb-2">Abnormal Psychology</h3>
+            <div data-id="182" class="flex items-center justify-between">
+              <span data-id="183" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="184" class="text-xl">📋</span>
+            </div>
+          </div>
+          <!-- Course 7 -->
+          <div data-id="185" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="186" class="font-mono text-gold text-sm font-bold mb-1">PSY-495</p>
+            <h3 data-id="187" class="font-heading text-navy font-bold text-base mb-2">Professional Capstone Project</h3>
+            <div data-id="188" class="flex items-center justify-between">
+              <span data-id="189" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body font-semibold">UNDERGRADUATE</span>
+              <span data-id="190" class="text-xl">🎓</span>
+            </div>
+          </div>
+          <!-- Course 8 -->
+          <div data-id="191" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="192" class="font-mono text-gold text-sm font-bold mb-1">PSY-5350TE</p>
+            <h3 data-id="193" class="font-heading text-navy font-bold text-base mb-2">Adolescent Psychology for Coaches</h3>
+            <div data-id="194" class="flex items-center justify-between">
+              <span data-id="195" class="bg-gold text-navy-dark text-xs px-2 py-0.5 rounded font-body font-semibold">GRADUATE</span>
+              <span data-id="196" class="text-xl">🧒</span>
+            </div>
+          </div>
+          <!-- Course 9 -->
+          <div data-id="197" class="course-card bg-white rounded-xl p-5 fade-in-up cursor-default">
+            <p data-id="198" class="font-mono text-gold text-sm font-bold mb-1">PSY-5360TE</p>
+            <h3 data-id="199" class="font-heading text-navy font-bold text-base mb-2">Sports Psychology for Coaches</h3>
+            <div data-id="200" class="flex items-center justify-between">
+              <span data-id="201" class="bg-gold text-navy-dark text-xs px-2 py-0.5 rounded font-body font-semibold">GRADUATE</span>
+              <span data-id="202" class="text-xl">🏅</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PUBLICATIONS & RESEARCH ═══════ -->
+    <section data-id="203" id="publications-section" class="py-16 md:py-24 bg-white">
+      <div data-id="204" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="205" class="text-center mb-10 fade-in-up">
+          <h2 data-id="206" id="pub-title-a9dk" class="font-heading text-2xl md:text-3xl text-navy font-bold mb-3">Publications &amp; Research</h2>
+          <div data-id="207" class="w-16 h-1 bg-gold mx-auto rounded"></div>
+        </div>
+
+        <!-- Pull Quote -->
+        <div data-id="208" class="fade-in-up bg-steel border-l-4 border-gold rounded-r-lg p-5 md:p-6 mb-10 max-w-3xl mx-auto">
+          <p data-id="209" class="italic text-navy text-sm md:text-base font-body leading-relaxed">"Research centers on occupational performance and well-being in high-demand operational populations — with particular emphasis on air traffic controller burnout, military workforce resilience, and the application of performance psychology to aviation environments."</p>
+        </div>
+
+        <!-- Publication Cards -->
+        <div data-id="210" class="space-y-6 max-w-3xl mx-auto">
+          <div data-id="211" class="pub-card bg-white rounded-r-xl p-5 md:p-6 shadow-sm fade-in-up">
+            <span data-id="212" class="inline-block bg-navy text-white text-xs font-bold px-3 py-1 rounded mb-3 font-body tracking-wide">PEER-REVIEWED JOURNAL ARTICLE · 2023</span>
+            <p data-id="213" class="text-txt text-sm md:text-base font-body leading-relaxed mb-3">Lagerberg, S. E., &amp; Lane, R. J. (2023). Air traffic controller health and well-being. <em data-id="214">Crisis, Stress, and Human Resilience: An International Journal</em>, 5(1), 16–20.</p>
+            <div data-id="215" class="flex flex-wrap gap-2">
+              <span data-id="216" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#AirTrafficControl</span>
+              <span data-id="217" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#OccupationalHealth</span>
+              <span data-id="218" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#HumanResilience</span>
+              <span data-id="219" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#PerformancePsychology</span>
+            </div>
+          </div>
+
+          <div data-id="220" class="pub-card bg-white rounded-r-xl p-5 md:p-6 shadow-sm fade-in-up">
+            <span data-id="221" class="inline-block bg-gold text-navy-dark text-xs font-bold px-3 py-1 rounded mb-3 font-body tracking-wide">DOCTORAL DISSERTATION · 2021</span>
+            <p data-id="222" class="text-txt text-sm md:text-base font-body leading-relaxed mb-3">Lagerberg, S. E. (2021). <em data-id="223">A descriptive study of burnout in military air traffic controllers</em>. Doctoral Dissertation, Grand Canyon University.</p>
+            <div data-id="224" class="flex flex-wrap gap-2">
+              <span data-id="225" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#Burnout</span>
+              <span data-id="226" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#MilitaryPsychology</span>
+              <span data-id="227" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#ATC</span>
+              <span data-id="228" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#PerformancePsychology</span>
+              <span data-id="229" class="text-xs bg-steel text-navy px-2 py-0.5 rounded font-mono">#GCU</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Research Interests -->
+        <div data-id="230" class="mt-10 text-center fade-in-up">
+          <h3 data-id="231" class="font-heading text-lg text-navy font-bold mb-4">Research Interests</h3>
+          <div data-id="232" class="flex flex-wrap justify-center gap-2 max-w-3xl mx-auto">
+            <span data-id="233" class="bg-navy text-white text-xs px-3 py-1.5 rounded-full font-body">#PerformancePsychology</span>
+            <span data-id="234" class="bg-gold text-navy-dark text-xs px-3 py-1.5 rounded-full font-body font-semibold">#ATC</span>
+            <span data-id="235" class="bg-navy text-white text-xs px-3 py-1.5 rounded-full font-body">#OccupationalBurnout</span>
+            <span data-id="236" class="bg-gold text-navy-dark text-xs px-3 py-1.5 rounded-full font-body font-semibold">#MilitaryPsychology</span>
+            <span data-id="237" class="bg-navy text-white text-xs px-3 py-1.5 rounded-full font-body">#SportPsychology</span>
+            <span data-id="238" class="bg-gold text-navy-dark text-xs px-3 py-1.5 rounded-full font-body font-semibold">#CognitiveNeuroscience</span>
+            <span data-id="239" class="bg-navy text-white text-xs px-3 py-1.5 rounded-full font-body">#OrganizationalLeadership</span>
+            <span data-id="240" class="bg-gold text-navy-dark text-xs px-3 py-1.5 rounded-full font-body font-semibold">#HumanResilience</span>
+            <span data-id="241" class="bg-navy text-white text-xs px-3 py-1.5 rounded-full font-body">#AviationSafety</span>
+            <span data-id="242" class="bg-gold text-navy-dark text-xs px-3 py-1.5 rounded-full font-body font-semibold">#WorkforceWellBeing</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CREDENTIALS ═══════ -->
+    <section data-id="243" id="credentials-section" class="py-16 md:py-24 bg-steel">
+      <div data-id="244" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="245" class="text-center mb-12 fade-in-up">
+          <h2 data-id="246" id="cred-title-z6yp" class="font-heading text-2xl md:text-3xl text-navy font-bold mb-3">Credentials</h2>
+          <div data-id="247" class="w-16 h-1 bg-gold mx-auto rounded"></div>
+        </div>
+
+        <div data-id="248" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <!-- Education -->
+          <div data-id="249" class="fade-in-up">
+            <h3 data-id="250" class="font-heading text-lg text-navy font-bold mb-4 flex items-center gap-2"><span data-id="251" class="text-xl">🎓</span> Education</h3>
+            <div data-id="252" class="space-y-4">
+              <div data-id="253" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <p data-id="254" class="font-heading text-navy font-bold text-sm">Ph.D., Performance Psychology</p>
+                <p data-id="255" class="text-muted text-xs font-body">Grand Canyon University | 2021</p>
+                <p data-id="256" class="text-gold text-xs font-bold mt-1 font-body">GPA: 3.7</p>
+                <p data-id="257" class="text-txt text-xs mt-2 font-body italic">Dissertation: A Descriptive Study of Burnout in Military Air Traffic Controllers</p>
+              </div>
+              <div data-id="258" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <p data-id="259" class="font-heading text-navy font-bold text-sm">M.P.A., Public Administration</p>
+                <p data-id="260" class="text-muted text-xs font-body">Ashford University | 2014</p>
+                <p data-id="261" class="text-gold text-xs font-bold mt-1 font-body">GPA: 3.92</p>
+              </div>
+              <div data-id="262" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+                <p data-id="263" class="font-heading text-navy font-bold text-sm">B.S., Social and Criminal Justice</p>
+                <p data-id="264" class="text-muted text-xs font-body">Ashford University | 2011</p>
+                <p data-id="265" class="text-gold text-xs font-bold mt-1 font-body">GPA: 3.92</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Honors & Affiliations -->
+          <div data-id="266" class="fade-in-up">
+            <h3 data-id="267" class="font-heading text-lg text-navy font-bold mb-4 flex items-center gap-2"><span data-id="268" class="text-xl">★</span> Honors &amp; Affiliations</h3>
+            <div data-id="269" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100 mb-4">
+              <h4 data-id="270" class="font-heading text-sm text-navy font-bold mb-2">Honors</h4>
+              <ul data-id="271" class="space-y-1.5 text-xs font-body text-txt">
+                <li data-id="272" class="flex gap-1.5"><span data-id="273" class="text-gold shrink-0">★</span> Psi Chi — International Honor Society in Psychology (2018)</li>
+                <li data-id="274" class="flex gap-1.5"><span data-id="275" class="text-gold shrink-0">★</span> Golden Key International Honor Society</li>
+                <li data-id="276" class="flex gap-1.5"><span data-id="277" class="text-gold shrink-0">★</span> Salute Veterans Honor Society</li>
+                <li data-id="278" class="flex gap-1.5"><span data-id="279" class="text-gold shrink-0">★</span> APA Division 47 Recognition</li>
+              </ul>
+            </div>
+            <div data-id="280" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <h4 data-id="281" class="font-heading text-sm text-navy font-bold mb-2 flex items-center gap-1"><span data-id="282">🔗</span> Affiliations</h4>
+              <p data-id="283" class="text-xs font-body text-txt font-semibold mb-1">American Psychological Association (APA)</p>
+              <p data-id="284" class="text-xs font-body text-muted mb-2">Member since 2025</p>
+              <ul data-id="285" class="space-y-1 text-xs font-body text-txt ml-3">
+                <li data-id="286">· Division 1: Society for General Psychology and Interdisciplinary Inquiry</li>
+                <li data-id="287">· Division 19: Society for Military Psychology</li>
+                <li data-id="288">· Division 47: Society for Sport, Exercise and Performance Psychology</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Core Competencies -->
+          <div data-id="289" class="fade-in-up">
+            <h3 data-id="290" class="font-heading text-lg text-navy font-bold mb-4 flex items-center gap-2"><span data-id="291" class="text-xl">⚡</span> Core Competencies</h3>
+            <div data-id="292" class="bg-white rounded-xl p-4 shadow-sm border border-gray-100">
+              <div data-id="293" class="flex flex-wrap gap-2">
+                <span data-id="294" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Performance Psychology</span>
+                <span data-id="295" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Psychological Assessment</span>
+                <span data-id="296" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Cognitive Neuroscience</span>
+                <span data-id="297" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Developmental Psychology</span>
+                <span data-id="298" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Coaching and Training</span>
+                <span data-id="299" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Team Leadership</span>
+                <span data-id="300" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Organizational Leadership</span>
+                <span data-id="301" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Conflict Resolution</span>
+                <span data-id="302" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Air Traffic Management</span>
+                <span data-id="303" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Flight Operations Planning</span>
+                <span data-id="304" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Learning Management Systems</span>
+                <span data-id="305" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Research Methodology</span>
+                <span data-id="306" class="bg-navy text-white text-xs px-2.5 py-1 rounded-full font-body">Analytical Skills</span>
+                <span data-id="307" class="bg-gold/20 text-navy text-xs px-2.5 py-1 rounded-full font-body font-semibold">Microsoft Office Suite</span>
+                <span data-id="308" class="bg-teal text-white text-xs px-2.5 py-1 rounded-full font-body font-semibold">AI Literacy</span>
+                <span data-id="309" class="bg-teal/15 text-teal text-xs px-2.5 py-1 rounded-full font-body font-semibold border border-teal/30">Prompt Engineering</span>
+                <span data-id="310" class="bg-teal text-white text-xs px-2.5 py-1 rounded-full font-body font-semibold">Workflow Automation</span>
+                <span data-id="311" class="bg-teal/15 text-teal text-xs px-2.5 py-1 rounded-full font-body font-semibold border border-teal/30">Responsible AI Use</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- ═══════ AI CERTIFICATIONS ═══════ -->
+        <div data-id="312" class="mt-12 fade-in-up">
+          <div data-id="313" class="flex items-center justify-center gap-3 mb-6">
+            <div data-id="314" class="h-px bg-teal/30 flex-1 max-w-[80px]"></div>
+            <h3 data-id="315" class="font-heading text-xl md:text-2xl text-teal font-bold flex items-center gap-2">
+              <span data-id="316" class="text-2xl">🤖</span> AI Certifications
+              <span data-id="317" class="ai-badge-new inline-block bg-teal text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ml-2">New</span>
+            </h3>
+            <div data-id="318" class="h-px bg-teal/30 flex-1 max-w-[80px]"></div>
+          </div>
+          <p data-id="319" class="text-center text-muted text-sm font-body mb-8 max-w-2xl mx-auto">Industry-recognized AI credentials demonstrating competency in artificial intelligence fundamentals, agentic workflows, and responsible AI application — bridging behavioral science with emerging technology.</p>
+
+          <div data-id="320" class="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto">
+            <!-- Google AI Essentials -->
+            <div data-id="321" class="ai-cert-card rounded-xl p-5 shadow-sm fade-in-up">
+              <div data-id="322" class="flex items-center gap-2 mb-3">
+                <span data-id="323" class="text-2xl">🎓</span>
+                <span data-id="324" class="bg-teal text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider font-body">Specialization</span>
+              </div>
+              <h4 data-id="325" class="font-heading text-navy font-bold text-sm md:text-base mb-1">Google AI Essentials Specialization</h4>
+              <p data-id="326" class="text-muted text-xs font-body mb-2">Google Career Certificates (Coursera)</p>
+              <p data-id="327" class="text-txt text-xs font-body mb-3">
+                <span data-id="328" class="font-semibold">Completed:</span> June 30, 2026
+              </p>
+              <div data-id="329" class="bg-white/70 rounded-lg px-3 py-2 border border-teal/15">
+                <p data-id="330" class="text-[10px] text-muted font-mono uppercase tracking-wide mb-0.5">Verification</p>
+                <p data-id="331" class="text-xs text-teal font-mono font-semibold break-all">coursera.org/verify/specialization/cJJCM2H2UYEI</p>
+              </div>
+            </div>
+
+            <!-- LinkedIn Learning — AI Agent -->
+            <div data-id="332" class="ai-cert-card rounded-xl p-5 shadow-sm fade-in-up">
+              <div data-id="333" class="flex items-center gap-2 mb-3">
+                <span data-id="334" class="text-2xl">🎓</span>
+                <span data-id="335" class="bg-teal text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider font-body">Certificate</span>
+              </div>
+              <h4 data-id="336" class="font-heading text-navy font-bold text-sm md:text-base mb-1">How to Build Your First AI Agent with ChatGPT</h4>
+              <p data-id="337" class="text-muted text-xs font-body mb-2">LinkedIn Learning</p>
+              <p data-id="338" class="text-txt text-xs font-body mb-3">
+                <span data-id="339" class="font-semibold">Completed:</span> June 29, 2026
+              </p>
+              <div data-id="340" class="bg-white/70 rounded-lg px-3 py-2 border border-teal/15">
+                <p data-id="341" class="text-[10px] text-muted font-mono uppercase tracking-wide mb-0.5">Certificate ID</p>
+                <p data-id="342" class="text-xs text-teal font-mono font-semibold break-all leading-relaxed">5d17e394eb04a24465f1f0891dbe3ead10a581a2fe7a16b5a675eb1366cb8701</p>
+              </div>
+            </div>
+
+            <!-- IBM — Introduction to AI -->
+            <div data-id="343" class="ai-cert-card rounded-xl p-5 shadow-sm fade-in-up">
+              <div data-id="344" class="flex items-center gap-2 mb-3">
+                <span data-id="345" class="text-2xl">🎓</span>
+                <span data-id="346" class="bg-teal text-white text-[10px] font-bold px-2 py-0.5 rounded uppercase tracking-wider font-body">Certificate</span>
+              </div>
+              <h4 data-id="347" class="font-heading text-navy font-bold text-sm md:text-base mb-1">Introduction to Artificial Intelligence (AI)</h4>
+              <p data-id="348" class="text-muted text-xs font-body mb-2">IBM Skills Network (Coursera)</p>
+              <p data-id="349" class="text-txt text-xs font-body mb-3">
+                <span data-id="350" class="font-semibold">Completed:</span> July 3, 2026
+              </p>
+              <div data-id="351" class="bg-white/70 rounded-lg px-3 py-2 border border-teal/15">
+                <p data-id="352" class="text-[10px] text-muted font-mono uppercase tracking-wide mb-0.5">Verification</p>
+                <p data-id="353" class="text-xs text-teal font-mono font-semibold break-all">coursera.org/verify/9TH2VWENMOOM</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ PROFESSIONAL DEVELOPMENT ═══════ -->
+    <section data-id="354" id="development-section" class="py-16 md:py-24 bg-white">
+      <div data-id="355" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="356" class="text-center mb-6 fade-in-up">
+          <h2 data-id="357" id="dev-title-c4ej" class="font-heading text-2xl md:text-3xl text-navy font-bold mb-3">Professional Development</h2>
+          <div data-id="358" class="w-16 h-1 bg-gold mx-auto rounded mb-6"></div>
+          <span data-id="359" class="inline-block bg-gold text-navy-dark text-sm font-bold px-4 py-1.5 rounded-full font-body">14 Completed Training Modules</span>
+        </div>
+
+        <div data-id="360" class="max-w-3xl mx-auto mt-10 space-y-3">
+          <!-- 2025 -->
+          <div data-id="361" class="accordion-group fade-in-up border border-gray-200 rounded-xl overflow-hidden">
+            <button data-id="362" class="accordion-btn w-full flex items-center justify-between p-4 md:p-5 bg-white hover:bg-steel/50 transition-colors text-left" data-year="2025">
+              <div data-id="363" class="flex items-center gap-3">
+                <span data-id="364" class="font-heading text-navy font-bold text-lg">2025</span>
+                <span data-id="365" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body">2 modules</span>
+              </div>
+              <i data-id="366" data-lucide="chevron-down" class="w-5 h-5 text-navy transition-transform accordion-chevron"></i>
+            </button>
+            <div data-id="367" class="accordion-content open bg-gray-50">
+              <ul data-id="368" class="p-4 md:p-5 pt-0 space-y-2 text-sm font-body text-txt">
+                <li data-id="369" class="flex gap-2 items-start"><span data-id="370" class="text-gold shrink-0 mt-0.5">•</span><span data-id="371">GCU AI Student Policy and Faculty Procedures — On Demand — Virtual</span></li>
+                <li data-id="372" class="flex gap-2 items-start"><span data-id="373" class="text-gold shrink-0 mt-0.5">•</span><span data-id="374">AI 101 and Paradigm Shift — On Demand — Virtual</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2023 -->
+          <div data-id="375" class="accordion-group fade-in-up border border-gray-200 rounded-xl overflow-hidden">
+            <button data-id="376" class="accordion-btn w-full flex items-center justify-between p-4 md:p-5 bg-white hover:bg-steel/50 transition-colors text-left" data-year="2023">
+              <div data-id="377" class="flex items-center gap-3">
+                <span data-id="378" class="font-heading text-navy font-bold text-lg">2023</span>
+                <span data-id="379" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body">1 module</span>
+              </div>
+              <i data-id="380" data-lucide="chevron-down" class="w-5 h-5 text-navy transition-transform accordion-chevron"></i>
+            </button>
+            <div data-id="381" class="accordion-content bg-gray-50">
+              <ul data-id="382" class="p-4 md:p-5 pt-0 space-y-2 text-sm font-body text-txt">
+                <li data-id="383" class="flex gap-2 items-start"><span data-id="384" class="text-gold shrink-0 mt-0.5">•</span><span data-id="385">Statement of Expectation for Grand Canyon University Staff — On Demand — Virtual (completed twice)</span></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- 2022 -->
+          <div data-id="386" class="accordion-group fade-in-up border border-gray-200 rounded-xl overflow-hidden">
+            <button data-id="387" class="accordion-btn w-full flex items-center justify-between p-4 md:p-5 bg-white hover:bg-steel/50 transition-colors text-left" data-year="2022">
+              <div data-id="388" class="flex items-center gap-3">
+                <span data-id="389" class="font-heading text-navy font-bold text-lg">2022</span>
+                <span data-id="390" class="bg-navy text-white text-xs px-2 py-0.5 rounded font-body">11 modules</span>
+              </div>
+              <i data-id="391" data-lucide="chevron-down" class="w-5 h-5 text-navy transition-transform accordion-chevron"></i>
+            </button>
+            <div data-id="392" class="accordion-content bg-gray-50">
+              <ul data-id="393" class="p-4 md:p-5 pt-0 space-y-2 text-sm font-body text-txt">
+                <li data-id="394" class="flex gap-2 items-start"><span data-id="395" class="text-gold shrink-0 mt-0.5">•</span><span data-id="396">Halo Learn — On Demand — Virtual</span></li>
+                <li data-id="397" class="flex gap-2 items-start"><span data-id="398" class="text-gold shrink-0 mt-0.5">•</span><span data-id="399">NCAA Division I: Compliance Module — On Demand — Virtual</span></li>
+                <li data-id="400" class="flex gap-2 items-start"><span data-id="401" class="text-gold shrink-0 mt-0.5">•</span><span data-id="402">Title IX: Compliance Module — On Demand — Virtual</span></li>
+                <li data-id="403" class="flex gap-2 items-start"><span data-id="404" class="text-gold shrink-0 mt-0.5">•</span><span data-id="405">Participation On Demand Workshop — On Demand — Virtual</span></li>
+                <li data-id="406" class="flex gap-2 items-start"><span data-id="407" class="text-gold shrink-0 mt-0.5">•</span><span data-id="408">FERPA — On Demand — Virtual</span></li>
+                <li data-id="409" class="flex gap-2 items-start"><span data-id="410" class="text-gold shrink-0 mt-0.5">•</span><span data-id="411">Active Threats Response Training: Compliance Module — On Demand — Virtual</span></li>
+                <li data-id="412" class="flex gap-2 items-start"><span data-id="413" class="text-gold shrink-0 mt-0.5">•</span><span data-id="414">College Specific Training: CHSS — On Demand — Virtual</span></li>
+                <li data-id="415" class="flex gap-2 items-start"><span data-id="416" class="text-gold shrink-0 mt-0.5">•</span><span data-id="417">General Data Protection Regulation — On Demand — Virtual</span></li>
+                <li data-id="418" class="flex gap-2 items-start"><span data-id="419" class="text-gold shrink-0 mt-0.5">•</span><span data-id="420">Academic Integrity: Compliance Module — On Demand — Virtual</span></li>
+                <li data-id="421" class="flex gap-2 items-start"><span data-id="422" class="text-gold shrink-0 mt-0.5">•</span><span data-id="423">Doctrinal Statement: Compliance Module — On Demand — Virtual</span></li>
+                <li data-id="424" class="flex gap-2 items-start"><span data-id="425" class="text-gold shrink-0 mt-0.5">•</span><span data-id="426">Providing Effective Feedback — On Demand — Virtual</span></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════ CONTACT ═══════ -->
+    <section data-id="427" id="contact-section" class="py-16 md:py-24" style="background: linear-gradient(135deg, #1B3A5C 0%, #0f2035 100%);">
+      <div data-id="428" class="max-w-[1100px] mx-auto px-5 md:px-6">
+        <div data-id="429" class="text-center mb-10 fade-in-up">
+          <h2 data-id="430" id="contact-title-f7ws" class="font-heading text-2xl md:text-3xl text-white font-bold mb-3">Get In Touch</h2>
+          <div data-id="431" class="w-16 h-1 bg-gold mx-auto rounded mb-6"></div>
+          <p data-id="432" class="text-white/80 text-sm md:text-base max-w-2xl mx-auto font-body leading-relaxed">Available for adjunct teaching opportunities, curriculum development consulting, instructional design projects, educational publishing collaboration, and organizational performance consulting.</p>
+        </div>
+
+        <div data-id="433" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-4xl mx-auto">
+          <a data-id="434" href="mailto:stephenlagerberg@gmail.com" class="fade-in-up bg-white rounded-xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+            <span data-id="435" class="text-2xl shrink-0">📧</span>
+            <div data-id="436">
+              <p data-id="437" class="text-xs text-muted font-body uppercase tracking-wide">Email</p>
+              <p data-id="438" class="text-navy text-sm font-body font-semibold group-hover:text-gold transition-colors break-all">stephenlagerberg@gmail.com</p>
+            </div>
+          </a>
+          <a data-id="439" href="tel:+13613436278" class="fade-in-up bg-white rounded-xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+            <span data-id="440" class="text-2xl shrink-0">📱</span>
+            <div data-id="441">
+              <p data-id="442" class="text-xs text-muted font-body uppercase tracking-wide">Phone</p>
+              <p data-id="443" class="text-navy text-sm font-body font-semibold group-hover:text-gold transition-colors">(361) 343-6278</p>
+            </div>
+          </a>
+          <div data-id="444" class="fade-in-up bg-white rounded-xl p-5 flex items-center gap-4">
+            <span data-id="445" class="text-2xl shrink-0">📍</span>
+            <div data-id="446">
+              <p data-id="447" class="text-xs text-muted font-body uppercase tracking-wide">Location</p>
+              <p data-id="448" class="text-navy text-sm font-body font-semibold">Pharr, Texas</p>
+            </div>
+          </div>
+          <a data-id="449" href="https://www.linkedin.com/in/stephen-lagerberg-ph-d-a32a302a" target="_blank" rel="noopener noreferrer" class="fade-in-up bg-white rounded-xl p-5 flex items-center gap-4 hover:shadow-lg transition-shadow group">
+            <span data-id="450" class="text-2xl shrink-0">🔗</span>
+            <div data-id="451">
+              <p data-id="452" class="text-xs text-muted font-body uppercase tracking-wide">LinkedIn</p>
+              <p data-id="453" class="text-navy text-sm font-body font-semibold group-hover:text-gold transition-colors">View Profile</p>
+            </div>
+          </a>
+          <div data-id="454" class="fade-in-up bg-white rounded-xl p-5 flex items-center gap-4 sm:col-span-2 lg:col-span-2">
+            <span data-id="455" class="text-2xl shrink-0">🎓</span>
+            <div data-id="456">
+              <p data-id="457" class="text-xs text-muted font-body uppercase tracking-wide">Academic Affiliation</p>
+              <p data-id="458" class="text-navy text-sm font-body font-semibold">Grand Canyon University — Adjunct Professor</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ═══════ FOOTER ═══════ -->
+  <footer data-id="459" id="footer-b2vd" class="bg-navy-dark py-6">
+    <div data-id="460" class="max-w-[1100px] mx-auto px-5 md:px-6 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
+      <p data-id="461" class="text-white/70 text-xs font-body">© 2026 Stephen E. Lagerberg, Ph.D. All rights reserved.</p>
+      <p data-id="462" class="text-white/50 text-xs font-body">Pharr, Texas | Ph.D. Performance Psychology | GCU Faculty</p>
+      <div data-id="463" class="flex items-center gap-3">
+        <a data-id="464" href="https://www.linkedin.com/in/stephen-lagerberg-ph-d-a32a302a" target="_blank" rel="noopener noreferrer" class="text-white/60 hover:text-gold transition-colors">
+          <i data-id="465" data-lucide="linkedin" class="w-5 h-5"></i>
+        </a>
+      </div>
+    </div>
+    <p data-id="466" class="text-center text-white/30 text-xs mt-4 font-body">Made by Copilot</p>
+  </footer>
+
+  <!-- Back to Top -->
+  <button data-id="467" id="back-to-top" class="fixed bottom-6 right-6 w-12 h-12 bg-navy rounded-full flex items-center justify-center shadow-lg hover:bg-navy-dark transition-colors z-50 border-2 border-gold/40" aria-label="Back to top">
+    <i data-id="468" data-lucide="arrow-up" class="w-5 h-5 text-gold"></i>
+  </button>
+
+  <script>
+    // === Guard Lucide ===
+    if (typeof lucide !== "undefined" && typeof lucide.createIcons === "function") {
+      lucide.createIcons();
+    }
+
+    // === Mobile Menu ===
+    (function() {
+      var menuBtn = document.getElementById('mobile-menu-btn-v2x1');
+      var closeBtn = document.getElementById('mobile-menu-close-k4wj');
+      var mobileMenu = document.getElementById('mobile-menu-n8rz');
+
+      if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', function() {
+          mobileMenu.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        });
+      }
+      if (closeBtn && mobileMenu) {
+        closeBtn.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          document.body.style.overflow = '';
+        });
+      }
+      // Close on nav link click
+      var mobileLinks = document.querySelectorAll('.mobile-nav-link');
+      mobileLinks.forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.add('hidden');
+          document.body.style.overflow = '';
+        });
+      });
+    })();
+
+    // === Smooth Scroll for Nav Links ===
+    (function() {
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener('click', function(e) {
+          var targetId = this.getAttribute('href');
+          if (targetId === '#') return;
+          var target = document.querySelector(targetId);
+          if (target) {
+            e.preventDefault();
+            var offset = 64;
+            var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+            window.scrollTo({ top: top, behavior: 'smooth' });
+          }
+        });
+      });
+    })();
+
+    // === Active Nav Highlight ===
+    (function() {
+      var sections = document.querySelectorAll('section[id]');
+      var navLinks = document.querySelectorAll('.nav-link');
+
+      var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting) {
+            var id = entry.target.id;
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      }, {
+        rootMargin: '-80px 0px -60% 0px',
+        threshold: 0
+      });
+
+      sections.forEach(function(section) {
+        observer.observe(section);
+      });
+    })();
+
+    // === Fade-In on Scroll ===
+    (function() {
+      var fadeEls = document.querySelectorAll('.fade-in-up');
+      var fadeObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry, index) {
+          if (entry.isIntersecting) {
+            // Stagger delay
+            var delay = Array.from(entry.target.parentElement.children).indexOf(entry.target) * 80;
+            setTimeout(function() {
+              entry.target.classList.add('visible');
+            }, Math.min(delay, 400));
+            fadeObserver.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -40px 0px'
+      });
+
+      fadeEls.forEach(function(el) {
+        fadeObserver.observe(el);
+      });
+    })();
+
+    // === Counter Animation ===
+    (function() {
+      var statNumbers = document.querySelectorAll('.stat-number[data-target]');
+      var counterStarted = false;
+
+      var counterObserver = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+          if (entry.isIntersecting && !counterStarted) {
+            counterStarted = true;
+            statNumbers.forEach(function(el) {
+              var target = parseInt(el.getAttribute('data-target'), 10);
+              var duration = 1500;
+              var startTime = null;
+              function animate(timestamp) {
+                if (!startTime) startTime = timestamp;
+                var progress = Math.min((timestamp - startTime) / duration, 1);
+                var eased = 1 - Math.pow(1 - progress, 3);
+                el.textContent = Math.round(eased * target);
+                if (progress < 1) {
+                  requestAnimationFrame(animate);
+                }
+              }
+              requestAnimationFrame(animate);
+            });
+            counterObserver.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.3 });
+
+      var statStrip = document.getElementById('stat-strip-j5bz');
+      if (statStrip) {
+        counterObserver.observe(statStrip);
+      }
+    })();
+
+    // === Accordion ===
+    (function() {
+      var buttons = document.querySelectorAll('.accordion-btn');
+      buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var content = this.nextElementSibling;
+          var chevron = this.querySelector('.accordion-chevron');
+          var isOpen = content.classList.contains('open');
+
+          if (isOpen) {
+            content.classList.remove('open');
+            if (chevron) chevron.style.transform = 'rotate(0deg)';
+          } else {
+            content.classList.add('open');
+            if (chevron) chevron.style.transform = 'rotate(180deg)';
+          }
+        });
+
+        // Set initial state for 2025 (open by default)
+        if (btn.getAttribute('data-year') === '2025') {
+          var chevron2025 = btn.querySelector('.accordion-chevron');
+          if (chevron2025) chevron2025.style.transform = 'rotate(180deg)';
+        }
+      });
+    })();
+
+    // === Back to Top ===
+    (function() {
+      var backBtn = document.getElementById('back-to-top');
+      if (backBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 300) {
+            backBtn.classList.add('show');
+          } else {
+            backBtn.classList.remove('show');
+          }
+        });
+        backBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</body>
+</html>
