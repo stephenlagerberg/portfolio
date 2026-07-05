@@ -4,131 +4,267 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Altitude | Aviation AI & Human Factors</title>
-    <link rel="stylesheet" href="styles.css?v=2">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Base Styles & Typography */
+        :root {
+            --sky-dark: #1A365D;
+            --sky-medium: #2B6CB0;
+            --sky-light: #EBF8FF;
+            --text-main: #2D3748;
+            --text-muted: #718096;
+            --accent: #DD6B20; /* Instrument panel amber */
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-main);
+            line-height: 1.6;
+            background-color: #F7FAFC;
+        }
+
+        h1, h2, h3 {
+            color: var(--sky-dark);
+            margin-top: 0;
+        }
+
+        /* Navigation & Header */
+        header {
+            background-color: var(--sky-dark);
+            color: #ffffff;
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+        }
+
+        header h1 {
+            color: #ffffff;
+            font-size: 2.8rem;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        header p.tagline {
+            font-size: 1.25rem;
+            font-weight: 300;
+            color: var(--sky-light);
+            margin-bottom: 2rem;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        nav a {
+            color: #E2E8F0;
+            text-decoration: none;
+            margin: 0 1.5rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            transition: color 0.2s ease-in-out;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        /* Layout */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem 1rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            margin-bottom: 3rem;
+            border-top: 4px solid var(--sky-medium);
+        }
+
+        .hero h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.15rem;
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-muted);
+        }
+
+        /* Grid Layout for Content */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        /* Cards */
+        .card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+            border: 1px solid #E2E8F0;
+        }
+
+        .card h3 {
+            display: flex;
+            align-items: center;
+            border-bottom: 2px solid var(--sky-light);
+            padding-bottom: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .card h3::before {
+            content: '✈';
+            color: var(--sky-medium);
+            margin-right: 0.75rem;
+            font-size: 1.2rem;
+            transform: rotate(45deg);
+        }
+
+        /* Expertise List */
+        .expertise-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .expertise-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.5rem;
+            position: relative;
+            color: var(--text-main);
+        }
+
+        .expertise-list li::before {
+            content: '■';
+            position: absolute;
+            left: 0;
+            top: 2px;
+            color: var(--accent);
+            font-size: 0.6rem;
+        }
+
+        /* Research/Projects */
+        .research-item {
+            margin-bottom: 2rem;
+        }
+        
+        .research-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .research-item h4 {
+            margin: 0 0 0.5rem 0;
+            color: var(--sky-dark);
+            font-size: 1.1rem;
+        }
+
+        .research-item p {
+            margin: 0;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--sky-dark);
+            color: #A0AEC0;
+            text-align: center;
+            padding: 2rem;
+            margin-top: 4rem;
+            font-size: 0.9rem;
+        }
+        
+        footer a {
+            color: #E2E8F0;
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Navigation & Branding -->
     <header>
-        <div class="nav-container">
-            <div class="brand">
-                <h2 style="margin: 0; color: #1e3a8a; font-weight: 700;">Mental Altitude</h2>
-            </div>
-            <nav>
-                <ul class="nav-links">
-                    <li><a href="#expertise">Aviation Expertise</a></li>
-                    <li><a href="#case-studies">Use Cases</a></li>
-                    <li><a href="#credentials">Credentials</a></li>
-                    <li><a href="#contact">Consultation</a></li>
-                </ul>
-            </nav>
-        </div>
+        <h1>Mental Altitude</h1>
+        <p class="tagline">Aviation AI & Human Factors</p>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#expertise">Core Expertise</a>
+            <a href="#research">Research & Strategy</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            
-            <!-- Centered Logo -->
-            <div style="display: flex; justify-content: center; align-items: flex-start; margin-bottom: 2rem;">
-                <img src="logo.png" alt="Mental Altitude Professional Logo" style="max-height: 220px; width: auto; display: block;">
-                <span style="font-size: 1.5rem; font-weight: 700; color: #FFFFFF; margin-left: 8px;">&trade;</span>
-            </div>
-
-            <h1>Integrating Enterprise AI into Zero-Fail Aviation Workflows.</h1>
-            <p class="subtitle">Stephen Lagerberg, Ph.D. | Principal Consultant, Mental Altitude</p>
-            <a href="#contact" class="cta-button">Initiate a Consultation</a>
-        </div>
-    </section>
-
-    <!-- Value Proposition / Expertise -->
-    <section id="expertise" class="section-container">
-        <h2>Core Aviation Competencies</h2>
-        <div class="grid-3">
-            <div class="card">
-                <h3>Air Traffic Control Operations</h3>
-                <p>Translating complex, high-velocity operational realities into actionable parameters for predictive analytics systems.</p>
-            </div>
-            <div class="card">
-                <h3>Behavioral Architecture (Human Factors)</h3>
-                <p>Mapping cognitive load and operational stress to ensure AI deployments enhance, rather than disrupt, frontline human performance.</p>
-            </div>
-            <div class="card">
-                <h3>Human-in-the-Loop AI Governance</h3>
-                <p>Architecting threshold-based automation systems where AI handles complex logistical data, but human operators maintain ultimate executive authority.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Executive Case Studies -->
-    <section id="case-studies" class="section-container bg-light">
-        <h2>Target Outcomes</h2>
-        <p class="section-desc">Technical rigor applied to operational aviation friction.</p>
+    <main class="container">
         
-        <div class="case-study-card">
-            <h3>Cognitive Load Mapping for Tower Automation</h3>
-            <div class="case-grid">
-                <div>
-                    <h4>1. The Operational Context</h4>
-                    <p>Next-generation air traffic control towers introducing predictive flow algorithms.</p>
-                </div>
-                <div>
-                    <h4>2. Human Factors Barriers</h4>
-                    <p>Alert fatigue and data saturation causing operators to ignore critical predictive warnings during high-density operations.</p>
-                </div>
-                <div>
-                    <h4>3. The AI & Behavioral Intervention</h4>
-                    <p>Designed a phased UI framework based on attention heuristics, only presenting data anomalies when human intervention is strictly required.</p>
-                </div>
-                <div>
-                    <h4>4. Quantifiable Value</h4>
-                    <p>Reduced cognitive friction for operators, increasing response accuracy to genuine logistical anomalies.</p>
-                </div>
-            </div>
-            <a href="#" class="text-link">View Full Repository Overview &rarr;</a>
-        </div>
-    </section>
+        <section id="about" class="hero">
+            <h2>Bridging Human Cognition and Flight Automation</h2>
+            <p>
+                I am Stephen Lagerberg, specializing in the intersection of aviation psychology, human-machine teaming, and next-generation flight deck design. My focus is on optimizing pilot performance, managing cognitive workload, and ensuring that advancing AI systems serve to elevate the human operator, rather than replace them.
+            </p>
+        </section>
 
-    <!-- Principal Credentials Section -->
-    <section id="credentials" class="section-container">
-        <h2>Principal Consultant Authority</h2>
-        <p class="section-desc">Bridging the gap between behavioral science, algorithmic complexity, and frontline execution.</p>
-        
-        <div class="case-study-card" style="display: flex; flex-wrap: wrap; gap: 2rem; align-items: center;">
-            <div style="flex: 1; min-width: 300px;">
-                <h3 style="color: #1e3a8a; margin-bottom: 1rem;">Stephen Lagerberg, Ph.D.</h3>
-                <p style="margin-bottom: 1rem;">With a foundation forged in military operations and active air traffic control, Stephen brings firsthand experience of zero-fail environments to enterprise tech integration. Holding a Ph.D. rooted in psychology and specialized certifications in AI strategy, he specializes in translating complex algorithmic outputs into secure, human-in-the-loop workflows.</p>
-                <p>His consulting practice, Mental Altitude, ensures that aviation tech startups and defense contractors deploy predictive software that operators actually trust under pressure.</p>
-            </div>
-            
-            <div style="flex: 1; min-width: 250px; background-color: #F1F5F9; padding: 2rem; border-radius: 8px;">
-                <h4 style="color: #0f172a; margin-bottom: 1rem; border-bottom: 2px solid #CBD5E1; padding-bottom: 0.5rem;">Core Credentials</h4>
-                <ul style="list-style-type: none; padding: 0;">
-                    <li style="margin-bottom: 0.75rem;"><strong>Ph.D.</strong> <br><span style="color: #4A5568; font-size: 0.9rem;">Psychology & Behavioral Science Focus</span></li>
-                    <li style="margin-bottom: 0.75rem;"><strong>Operational Background</strong> <br><span style="color: #4A5568; font-size: 0.9rem;">Military & Air Traffic Control Operations</span></li>
-                    <li><strong>Certifications</strong> <br><span style="color: #4A5568; font-size: 0.9rem;">Google AI Essentials & Applied AI Strategy</span></li>
+        <div class="grid">
+            <!-- Left Column: Skills / Human Factors Focus -->
+            <section id="expertise" class="card">
+                <h3>Core Competencies</h3>
+                <ul class="expertise-list">
+                    <li><strong>Cognitive Workload Analysis:</strong> Evaluating pilot attention distribution and task saturation during high-tempo operations.</li>
+                    <li><strong>Human-AI Teaming:</strong> Designing intuitive interfaces for collaborative decision-making between flight crews and autonomous systems.</li>
+                    <li><strong>Crew Resource Management (CRM):</strong> Enhancing communication protocols in mixed human-synthetic crew environments.</li>
+                    <li><strong>Flight Deck Ergonomics:</strong> Applying user-centered design principles to avionics and glass cockpit displays.</li>
+                    <li><strong>Error Mitigation Strategy:</strong> Identifying points of systemic friction to reduce the likelihood of spatial disorientation and mode confusion.</li>
                 </ul>
-            </div>
-        </div>
-    </section>
+            </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="section-container">
-        <div class="contact-box">
-            <h2>Ready to compress decision cycles in your airspace?</h2>
-            <p>Connect to discuss how Mental Altitude can secure and optimize your operational frameworks.</p>
-            <a href="https://linkedin.com/in/yourprofile" class="cta-button" target="_blank">Connect on LinkedIn</a>
-        </div>
-    </section>
+            <!-- Right Column: Case Studies / Research (Replacing "Coding Projects") -->
+            <section id="research" class="card">
+                <h3>Research & Applied Strategy</h3>
+                
+                <div class="research-item">
+                    <h4>Human-in-the-Loop (HITL) Simulation Analysis</h4>
+                    <p>Conducted scenario-based evaluations of pilot response times when transitioning from autonomous flight management back to manual control during unexpected instrument failures.</p>
+                </div>
 
-    <footer>
-        <p>&copy; 2026 Mental Altitude. All rights reserved.</p>
+                <div class="research-item">
+                    <h4>AI Copilot Workload Optimization</h4>
+                    <p>Designed theoretical framework for an adaptive AI interface that dynamically adjusts information presentation based on real-time biometric indicators of pilot stress.</p>
+                </div>
+
+                <div class="research-item">
+                    <h4>Mitigating Automation Surprise</h4>
+                    <p>Published internal case studies on modern aviation incidents caused by mode confusion, proposing standardized alert hierarchies to improve situational awareness.</p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer id="contact">
+        <p>Stephen Lagerberg | <strong>Mental Altitude</strong></p>
+        <p>Aviation Human Factors & Systems Integration</p>
+        <p>
+            <a href="mailto:your.email@example.com">Email Me</a> | 
+            <a href="https://linkedin.com/in/yourprofile" target="_blank">LinkedIn</a>
+        </p>
     </footer>
 
 </body>
 </html>
-
 
 
 
