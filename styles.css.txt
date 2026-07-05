@@ -1,0 +1,204 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: #2D3748;
+    background-color: #F7FAFC;
+}
+
+/* Typography */
+h1, h2, h3, h4 {
+    color: #1A202C;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+/* Header & Navigation */
+header {
+    background-color: #FFFFFF;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand-logo {
+    max-height: 50px;
+    width: auto;
+    display: block;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #4A5568;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #003366; /* Aviation Navy */
+}
+
+/* Hero Section */
+.hero {
+    /* Updated gradient for a slightly more precise, technical feel */
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #FFFFFF;
+    padding: 6rem 2rem;
+    text-align: center;
+}
+
+.hero h1 {
+    color: #FFFFFF;
+    max-width: 900px;
+    margin: 0 auto 1.5rem auto;
+}
+
+.subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 2.5rem;
+    opacity: 0.9;
+}
+
+/* Buttons */
+.cta-button {
+    display: inline-block;
+    background-color: #F8FAFC;
+    color: #0f172a;
+    padding: 0.75rem 2rem;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #CBD5E1;
+}
+
+/* Layout Containers */
+.section-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+}
+
+.bg-light {
+    background-color: #F1F5F9;
+}
+
+.section-desc {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 1.1rem;
+    color: #64748B;
+}
+
+/* Grids & Cards */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    background: #FFFFFF;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    border-top: 4px solid #1e3a8a; /* Accent matches hero */
+}
+
+/* Case Study Section */
+.case-study-card {
+    background: #FFFFFF;
+    padding: 3rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    margin-bottom: 2rem;
+}
+
+.case-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.case-grid h4 {
+    font-size: 1rem;
+    color: #1e3a8a;
+    margin-bottom: 0.5rem;
+}
+
+.text-link {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.text-link:hover {
+    text-decoration: underline;
+}
+
+/* Contact Box */
+.contact-box {
+    background: #0f172a;
+    color: #FFFFFF;
+    padding: 4rem 2rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.contact-box h2 {
+    color: #FFFFFF;
+}
+
+.contact-box p {
+    margin-bottom: 2rem;
+    font-size: 1.1rem;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: #64748B;
+    background-color: #FFFFFF;
+    border-top: 1px solid #E2E8F0;
+}
+
