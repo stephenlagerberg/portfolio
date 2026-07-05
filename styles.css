@@ -48,10 +48,23 @@ header {
     align-items: center;
 }
 
+.brand {
+    display: flex;
+    align-items: flex-start; 
+}
+
 .brand-logo {
-    max-height: 50px;
+    max-height: 120px; /* Increased from 50px */
     width: auto;
     display: block;
+}
+
+.tm-symbol {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin-left: 4px;
+    margin-top: 2px;
 }
 
 .nav-links {
@@ -68,12 +81,11 @@ header {
 }
 
 .nav-links a:hover {
-    color: #003366; /* Aviation Navy */
+    color: #003366;
 }
 
 /* Hero Section */
 .hero {
-    /* Updated gradient for a slightly more precise, technical feel */
     background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
     color: #FFFFFF;
     padding: 6rem 2rem;
@@ -139,7 +151,7 @@ header {
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    border-top: 4px solid #1e3a8a; /* Accent matches hero */
+    border-top: 4px solid #1e3a8a; 
 }
 
 /* Case Study Section */
@@ -201,4 +213,6 @@ footer {
     background-color: #FFFFFF;
     border-top: 1px solid #E2E8F0;
 }
+
+
 
