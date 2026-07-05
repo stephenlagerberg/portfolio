@@ -53,12 +53,14 @@ header {
     align-items: flex-start; 
 }
 
+/* FORCED LOGO SIZE UPDATE */
 .brand-logo {
-    max-height: 120px; /* Increased from 50px */
+    max-height: 120px !important; 
     width: auto;
     display: block;
 }
 
+/* TRADEMARK SYMBOL */
 .tm-symbol {
     font-size: 0.85rem;
     font-weight: 700;
