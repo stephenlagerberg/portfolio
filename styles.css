@@ -200,5 +200,11 @@ footer .copyright {
     font-size: 0.9rem;
     color: #94a3b8;
 }
-
+/* Logo Styling */
+.brand-logo {
+    max-width: 300px; /* Adjust this value to make your logo bigger or smaller */
+    height: auto;
+    margin: 0 auto 1rem auto; /* Centers the logo and adds space below it */
+    display: block;
+}
 
