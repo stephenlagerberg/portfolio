@@ -1,316 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mental Altitude | Aviation AI & Human Factors Consulting</title>
-    <style>
-        :root {
-            --navy-dark: #0A192F;
-            --navy-light: #112240;
-            --slate: #8892B0;
-            --white: #E6F1FF;
-            --gold: #F6AD55;
-            --bg-main: #F4F7FA;
-            --text-dark: #2D3748;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stephen Lagerberg, Ph.D. | Mental Altitude</title>
+  <style>
+    :root {
+      --primary-color: #0b2545;
+      --secondary-color: #13315c;
+      --accent-color: #8da9c4;
+      --text-color: #333333;
+      --bg-color: #f8f9fa;
+      --white: #ffffff;
+    }
 
-        body {
-            font-family: 'Inter', 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-dark);
-            line-height: 1.7;
-            background-color: var(--bg-main);
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        h1, h2, h3, h4 { margin-top: 0; }
+    body {
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+    }
 
-        /* --- HEADER & NAVIGATION --- */
-        header {
-            background-color: var(--navy-dark);
-            color: var(--white);
-            padding: 1.5rem 4rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            border-bottom: 4px solid var(--gold);
-        }
+    .container {
+      width: 100%;
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-        .brand-container {
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-        }
+    /* Header & Navigation */
+    header {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 20px 0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
 
-        .brand-logo {
-            max-width: 220px; /* Increased size for legibility */
-            height: auto;
-            display: block;
-        }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
 
-        .brand-text h1 {
-            color: var(--white);
-            font-size: 2.2rem;
-            margin: 0 0 0.2rem 0;
-            letter-spacing: 1px;
-        }
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--white);
+      text-decoration: none;
+    }
 
-        .brand-text p.tagline {
-            font-size: 1rem;
-            font-weight: 300;
-            color: var(--slate);
-            margin: 0;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-        }
+    .logo span {
+      display: block;
+      font-size: 0.9rem;
+      font-weight: normal;
+      color: var(--accent-color);
+    }
 
-        nav {
-            display: flex;
-            gap: 1rem;
-        }
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
 
-        nav a {
-            color: var(--white);
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 0.6rem 1.2rem;
-            border-radius: 4px;
-            transition: all 0.2s ease-in-out;
-        }
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
 
-        nav a:hover {
-            color: var(--navy-dark);
-            background-color: var(--gold);
-        }
+    nav a:hover {
+      color: var(--accent-color);
+    }
 
-        /* --- MAIN CONTAINER --- */
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 1.5rem;
-        }
+    /* Hero Section */
+    .hero {
+      background-color: var(--white);
+      padding: 80px 0;
+      text-align: center;
+      border-bottom: 1px solid #ddd;
+    }
 
-        /* --- VALUE PROPOSITION (HERO) --- */
-        .hero {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 4rem 3rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            margin-bottom: 3rem;
-            text-align: center;
-            border-top: 5px solid var(--navy-light);
-        }
+    .hero h1 {
+      font-size: 2.8rem;
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
 
-        .hero h2 {
-            font-size: 2.4rem;
-            color: var(--navy-dark);
-            margin-bottom: 0.5rem;
-        }
-        
-        .hero h3 {
-            font-size: 1.2rem;
-            color: var(--slate);
-            font-weight: 400;
-            margin-bottom: 2rem;
-        }
+    .hero h2 {
+      font-size: 1.5rem;
+      color: var(--secondary-color);
+      font-weight: 400;
+      margin-bottom: 20px;
+    }
 
-        .hero p {
-            font-size: 1.15rem;
-            max-width: 850px;
-            margin: 0 auto;
-            color: var(--text-dark);
-        }
+    .hero p {
+      font-size: 1.1rem;
+      max-width: 700px;
+      margin: 0 auto;
+      color: #555;
+    }
 
-        /* --- TWO COLUMN LAYOUT --- */
-        .two-col {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
+    /* Sections General */
+    section {
+      padding: 60px 0;
+    }
 
-        .card {
-            background: #ffffff;
-            border-radius: 8px;
-            padding: 2.5rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
+    section h2 {
+      font-size: 2rem;
+      color: var(--primary-color);
+      margin-bottom: 30px;
+      text-align: center;
+    }
 
-        .card h3 {
-            color: var(--navy-dark);
-            border-bottom: 2px solid var(--bg-main);
-            padding-bottom: 1rem;
-            margin-bottom: 1.5rem;
-            font-size: 1.4rem;
-        }
+    /* About Section */
+    .about-content {
+      background: var(--white);
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
 
-        ul.custom-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
 
-        ul.custom-list li {
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
+    .service-card {
+      background: var(--white);
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+      border-top: 4px solid var(--secondary-color);
+    }
 
-        ul.custom-list li::before {
-            content: '✈';
-            position: absolute;
-            left: 0;
-            top: 2px;
-            color: var(--gold);
-            font-size: 0.9rem;
-            transform: rotate(45deg);
-        }
+    .service-card h3 {
+      color: var(--secondary-color);
+      margin-bottom: 15px;
+    }
 
-        /* --- EXPERIENCE & RESEARCH --- */
-        .timeline-item {
-            margin-bottom: 1.5rem;
-            padding-left: 1.5rem;
-            border-left: 3px solid var(--navy-light);
-        }
+    /* Certifications Section */
+    .cert-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
 
-        .timeline-item h4 {
-            margin: 0 0 0.2rem 0;
-            color: var(--navy-dark);
-        }
+    .cert-card {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      background: var(--white);
+      padding: 25px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    }
 
-        .timeline-item .meta {
-            font-size: 0.85rem;
-            color: var(--slate);
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
+    .cert-image {
+      max-width: 200px;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+    }
 
-        .timeline-item p { margin: 0; font-size: 0.95rem; }
+    .cert-details h3 {
+      color: var(--secondary-color);
+      margin-bottom: 10px;
+    }
 
-        /* --- FOOTER --- */
-        footer {
-            background: var(--navy-dark);
-            color: var(--slate);
-            text-align: center;
-            padding: 3rem 1.5rem;
-            font-size: 0.95rem;
-        }
+    .cert-details p {
+      margin-bottom: 5px;
+      font-size: 0.95rem;
+    }
 
-        footer strong { color: var(--white); }
-        footer a { color: var(--gold); text-decoration: none; }
-        footer a:hover { text-decoration: underline; }
-        
-        @media (max-width: 768px) {
-            .two-col { grid-template-columns: 1fr; }
-            header { flex-direction: column; text-align: center; }
-            .brand-container { flex-direction: column; text-align: center; }
-        }
-    </style>
+    .verify-link {
+      display: inline-block;
+      margin-top: 10px;
+      color: var(--secondary-color);
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .verify-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Footer */
+    footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      text-align: center;
+      padding: 30px 0;
+    }
+
+    footer p {
+      margin-bottom: 10px;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+      
+      nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .hero h1 {
+        font-size: 2.2rem;
+      }
+
+      .cert-card {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
 <body>
 
-    <header>
-        <div class="brand-container">
-            <img src="logo.png" alt="Mental Altitude Logo" class="brand-logo">
-            <div class="brand-text">
-                <h1>Mental Altitude</h1>
-                <p class="tagline">Human Performance Science & Applied AI</p>
-            </div>
+  <header>
+    <div class="container header-content">
+      <a href="#" class="logo">
+        Mental Altitude
+        <span>Aviation AI & Human Factors</span>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h1>Stephen Lagerberg, Ph.D.</h1>
+      <h2>Human Performance & Aviation Psychology Consultant</h2>
+      <p>Bridging the gap between complex autonomous systems and human operators. Specializing in the psychological impact and safe integration of artificial intelligence in high-stakes aviation environments.</p>
+    </div>
+  </section>
+
+  <section id="about" class="container">
+    <h2>About My Practice</h2>
+    <div class="about-content">
+      <p>I apply a Ph.D. in psychology alongside operational experience in the military and air traffic control to solve critical human-machine interface challenges. As artificial intelligence and automated decision support tools become standard in aviation, understanding how human operators process information, manage cognitive load, and make decisions under stress is vital.</p>
+      <br>
+      <p>My work at Mental Altitude ensures that new aerospace technologies are designed around human capabilities rather than forcing operators to adapt to rigid systems. I provide remote consulting services to organizations looking to build safer, more intuitive operational environments.</p>
+    </div>
+  </section>
+
+  <section id="services" class="container" style="background-color: var(--bg-color);">
+    <h2>Consulting Services</h2>
+    <div class="services-grid">
+      <div class="service-card">
+        <h3>Cognitive Workload Assessments</h3>
+        <p>Evaluating human performance and stress responses during the integration of new flight deck automation and air traffic control decision support tools.</p>
+      </div>
+      <div class="service-card">
+        <h3>AI Automation Bias Evaluation</h3>
+        <p>Analyzing behavioral reliance on artificial intelligence systems to prevent complacency and improve critical decision-making in the loop.</p>
+      </div>
+      <div class="service-card">
+        <h3>User Experience (UX) Research</h3>
+        <p>Conducting specialized usability testing and human-centered design evaluations for aviation interfaces to ensure intuitive, accessible, and safe operations.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="education" class="container">
+    <h2>Education & Certifications</h2>
+    <div class="cert-grid">
+      
+      <div class="cert-card">
+        <div class="cert-details">
+          <h3>Doctor of Philosophy (Ph.D.) in Psychology</h3>
+          <p><strong>Focus:</strong> Aviation Psychology and Human Performance</p>
         </div>
-        <nav>
-            <a href="#about">About</a>
-            <a href="#focus">Focus Areas</a>
-            <a href="#experience">Experience</a>
-            <a href="#contact">Contact</a>
-        </nav>
-    </header>
+      </div>
 
-    <main class="container">
-        
-        <section id="about" class="hero">
-            <h2>Stephen E. Lagerberg, Ph.D.<!--[cite: 2] --></h2>
-            <h3>Performance Psychologist | ATC Human Performance Specialist | SME Consultant<!--[cite: 2] --></h3>
-            <p>
-                I am a doctoral-level performance psychologist and twelve-year United States Navy aviation veteran delivering evidence-based solutions at the intersection of human performance science, air traffic control operations, and occupational well-being.<!--[cite: 2] --> By integrating applied AI capabilities, validated through Google and IBM, I deliver AI-augmented consulting, performance analysis, and workforce development solutions tailored to safety-critical aviation professionals without displacing human domain expertise.<!--[cite: 2] -->
-            </p>
-        </section>
-
-        <div class="two-col" id="focus">
-            <section class="card">
-                <h3>Consulting Focus Areas</h3>
-                <ul class="custom-list">
-                    <li><strong>Human Performance Optimization:</strong> Enhancing situational awareness and decision-making for aviation professionals.<!--[cite: 2] --></li>
-                    <li><strong>Occupational Burnout & Well-Being:</strong> Assessment and intervention program design tailored for air traffic controllers and military populations.<!--[cite: 2] --></li>
-                    <li><strong>Applied AI Integration & Literacy:</strong> Utilizing prompt engineering and workflow automation to enhance analytical throughput and instructional design.<!--[cite: 2] --></li>
-                    <li><strong>Training Needs Assessment (TNA):</strong> Curriculum development and instructional design for safety-critical environments.<!--[cite: 2] --></li>
-                    <li><strong>Organizational Leadership:</strong> Facilitating team dynamics, military-to-civilian transitions, and SME support.<!--[cite: 2] --></li>
-                </ul>
-            </section>
-
-            <section class="card">
-                <h3>Applied AI Credentials & Research</h3>
-                <div class="timeline-item">
-                    <h4>Artificial Intelligence Specializations<!--[cite: 2] --></h4>
-                    <p class="meta">Google Career Certificates | IBM Skills Network | LinkedIn Learning<!--[cite: 2] --></p>
-                    <p>Credentialed in AI Essentials, Introduction to AI, and Building AI Agents to integrate responsible workflow automation into behavioral science and performance assessment.<!--[cite: 2] --></p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Air Traffic Controller Health and Well-being<!--[cite: 2] --></h4>
-                    <p class="meta">Crisis, Stress, and Human Resilience: An International Journal (2023)<!--[cite: 2] --></p>
-                    <p>Co-authored peer-reviewed research analyzing occupational stressors and resilience frameworks for aviation professionals.<!--[cite: 2] --></p>
-                </div>
-                <div class="timeline-item">
-                    <h4>Burnout in Military Air Traffic Controllers<!--[cite: 2] --></h4>
-                    <p class="meta">Doctoral Dissertation, Grand Canyon University (2021)<!--[cite: 2] --></p>
-                    <p>Descriptive study of burnout etiology, operational performance, and prevention strategies within military ATC populations.<!--[cite: 2] --></p>
-                </div>
-            </section>
+      <div class="cert-card">
+        <!-- Save your Coursera image as 'google-ux-certificate.jpg' in an 'images' folder -->
+        <img src="images/google-ux-certificate.jpg" alt="Google Foundations of User Experience (UX) Design Certificate" class="cert-image">
+        <div class="cert-details">
+          <h3>Foundations of User Experience (UX) Design</h3>
+          <p><strong>Issuer:</strong> Google via Coursera</p>
+          <p><strong>Date Completed:</strong> July 11, 2026</p>
+          <p><strong>Recipient:</strong> Stephen Lagerberg, Ph.D.</p>
+          <p>Focused on user-centered design, accessibility, and translating complex human behaviors into intuitive digital interactions.</p>
+          <a href="https://coursera.org/verify/1SWM7OSMAH82" target="_blank" class="verify-link">Verify Certificate</a>
         </div>
+      </div>
 
-        <section id="experience" class="card" style="margin-bottom: 3rem;">
-            <h3>Professional Experience</h3>
-            <div class="two-col" style="margin-bottom: 0;">
-                <div>
-                    <div class="timeline-item">
-                        <h4>Air Traffic Manager<!--[cite: 1] --></h4>
-                        <p class="meta">Robinson Aviation (RVA), Inc. | McAllen, TX | 2021 - Present<!--[cite: 1, 2] --></p>
-                        <p>Direct air traffic management operations, optimizing controller effectiveness and operational risk through human performance and organizational psychology principles.<!--[cite: 2] --></p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Adjunct Professor - Psychology<!--[cite: 2] --></h4>
-                        <p class="meta">Grand Canyon University | Remote | 2022 - Present<!--[cite: 2] --></p>
-                        <p>Instruct graduate and undergraduate courses in cognitive neuroscience, leadership, and performance psychology.<!--[cite: 2] --></p>
-                    </div>
-                </div>
-                <div>
-                    <div class="timeline-item">
-                        <h4>Air Traffic Control Tower Supervisor<!--[cite: 1] --></h4>
-                        <p class="meta">DynCorp International | 2020 - 2021<!--[cite: 1, 2] --></p>
-                        <p>Led performance oversight, training reinforcement, and compliance monitoring for ATC staff in a time-critical operational environment.<!--[cite: 2] --></p>
-                    </div>
-                    <div class="timeline-item">
-                        <h4>Flight Planning Chief - Naval Aviation<!--[cite: 2] --></h4>
-                        <p class="meta">United States Navy | 2007 - 2019<!--[cite: 2] --></p>
-                        <p>Overseen aviation flight planning and operational risk management across twelve years of military ATC workflows and airspace management.<!--[cite: 2] --></p>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <div class="cert-card">
+        <div class="cert-details">
+          <h3>Google AI Essentials</h3>
+          <p><strong>Issuer:</strong> Google via Coursera</p>
+          <p>Focused on the practical application of artificial intelligence tools and their impact on operational workflows.</p>
+        </div>
+      </div>
 
-    </main>
+    </div>
+  </section>
 
-    <footer id="contact">
-        <p><strong>Stephen E. Lagerberg, Ph.D.</strong> | Mental Altitude Consulting</p>
-        <p>Pharr, TX<!--[cite: 2] --> | <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a><!--[cite: 2] --> | (361) 343-6278<!--[cite: 2] --></p>
-        <p style="margin-top: 1rem;">
-            <a href="https://linkedin.com/in/stephen-lagerberg-ph-d-a32a302a" target="_blank">LinkedIn Profile</a><!--[cite: 2] -->
-        </p>
-    </footer>
+  <section id="contact" class="container" style="text-align: center;">
+    <h2>Get In Touch</h2>
+    <p>Available for remote consulting opportunities and project collaborations.</p>
+    <br>
+    <a href="mailto:contact@example.com" class="verify-link" style="font-size: 1.2rem;">Contact Me</a>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 Stephen Lagerberg, Ph.D. | Mental Altitude.</p>
+      <p>Aviation AI & Human Factors Consulting</p>
+    </div>
+  </footer>
 
 </body>
 </html>
