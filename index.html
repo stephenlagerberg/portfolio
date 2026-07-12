@@ -183,4 +183,267 @@
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.06);
             border-top: 5px solid var(--secondary);
-            transition:
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            border-top-color: var(--primary);
+        }
+
+        .service-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        /* --- About Section --- */
+        .about-section {
+            background-color: #f3f6f9;
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+            color: #444;
+            text-align: justify;
+        }
+
+        .about-content p {
+            margin-bottom: 20px;
+        }
+
+        /* --- Credentials & AI Section --- */
+        .credentials-section {
+            background-color: var(--primary);
+            color: var(--light-text);
+        }
+
+        .credentials-section .section-title {
+            color: var(--light-text);
+        }
+
+        .credentials-section .section-title::after {
+            background: var(--silver);
+        }
+
+        .cred-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto 50px auto;
+        }
+
+        .cred-box {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary);
+        }
+
+        .cred-box h4 {
+            margin-bottom: 15px;
+            color: var(--silver);
+            font-size: 1.2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 10px;
+        }
+
+        .cert-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            background: rgba(0,0,0,0.2);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .cert-list li {
+            font-size: 0.95rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .cert-list li::before {
+            content: "✓";
+            color: var(--silver);
+            font-weight: bold;
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+
+        /* --- Contact --- */
+        .contact-section {
+            text-align: center;
+            background: #ffffff;
+        }
+
+        .contact-info {
+            font-size: 1.3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            background: #f8fbfd;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+            border: 1px solid #e1e8f0;
+        }
+
+        .contact-info a {
+            color: var(--secondary);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: var(--primary);
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #061020;
+            color: #6a7b92;
+            text-align: center;
+            padding: 25px;
+            font-size: 0.95rem;
+        }
+
+        /* --- Mobile Responsiveness --- */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; 
+            }
+            .main-logo {
+                max-width: 90%;
+            }
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .tm-symbol {
+                bottom: 20%;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-brand">Mental Altitude Consulting</div>
+        <div class="nav-links">
+            <a href="#services">Expertise</a>
+            <a href="#about">About</a>
+            <a href="#credentials">Credentials & AI</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION WITH PROMINENT LOGO & TM -->
+    <header class="hero">
+        <div class="logo-container">
+            <!-- Image loaded directly via URL -->
+            <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Mental Altitude Consulting Logo" class="main-logo">
+            <span class="tm-symbol">&trade;</span>
+        </div>
+        <h1>Stephen Lagerberg, Ph.D.</h1>
+        <h2>Optimizing Human Performance, Resilience, and Leadership in High-Stakes Environments.</h2>
+        <a href="#contact" class="cta-btn">Schedule a Consultation</a>
+    </header>
+
+    <!-- CORE EXPERTISE -->
+    <section id="services">
+        <h2 class="section-title">Core Consulting Expertise</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Aviation & Operations Management</h3>
+                <p>Drawing on a distinguished career as a U.S. Navy Flight Planning Chief and current Air Traffic Manager at RVA. Providing expert guidance on situational awareness, airspace management, safety protocols, and operational efficiency under high-stress conditions.</p>
+            </div>
+            <div class="service-card">
+                <h3>Performance Psychology & Coaching</h3>
+                <p>Applying advanced cognitive neuroscience and sports psychology to optimize individual and team output. Dedicated to mitigating operational burnout, enhancing high-speed decision-making, and building unshakeable mental resilience.</p>
+            </div>
+            <div class="service-card">
+                <h3>Leadership & Team Building</h3>
+                <p>Developing robust organizational cultures based on proven psychological frameworks. Bridging the gap between academic theory and practical, boots-on-the-ground leadership to foster operational cohesion, deep trust, and sustained excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT SECTION -->
+    <section id="about" class="about-section">
+        <h2 class="section-title">About Dr. Stephen Lagerberg</h2>
+        <div class="about-content">
+            <p>I am a performance psychology consultant, aviation manager, and academic professional dedicated to elevating human potential. With a Ph.D. in General Psychology from Grand Canyon University, my research and practice focus on how individuals and teams navigate stress, maintain situational awareness, and lead effectively.</p>
+            <p>My career is fundamentally rooted in high-stakes environments. From serving as a Flight Planning Chief in the United States Navy to my current role managing complex air traffic operations at McAllen International Airport, I understand that human performance is the single most critical variable in any complex system.</p>
+            <p>As an Adjunct Professor, I teach the next generation of leaders in cognitive neuroscience, experimental psychology, and the psychology of coaching. I bring this multifaceted, evidence-based approach directly to my consulting clients, providing strategies that are rigorously tested and immediately actionable in the field.</p>
+        </div>
+    </section>
+
+    <!-- CREDENTIALS & AI INTEGRATION -->
+    <section id="credentials" class="credentials-section">
+        <h2 class="section-title">Credentials & Publications</h2>
+        
+        <div class="cred-grid">
+            <div class="cred-box">
+                <h4>Academic Background</h4>
+                <p><strong>Ph.D. in General Psychology</strong><br>Grand Canyon University (2021)</p>
+                <p style="margin-top: 10px;">Adjunct Professor teaching Cognitive Neuroscience, Sports Psychology, Lifespan Development, and Leadership.</p>
+            </div>
+            <div class="cred-box">
+                <h4>Key Publications</h4>
+                <p style="margin-bottom: 10px;"><em>Air Traffic Controller Health and Well-Being</em> (2023)</p>
+                <p><em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em> (2021)</p>
+            </div>
+            <div class="cred-box">
+                <h4>Professional Affiliations</h4>
+                <p>Member, APA Division 1, 19, and 47</p>
+                <p>Psi Chi International Honor Society in Psychology</p>
+            </div>
+        </div>
+
+        <h3 style="text-align: center; margin-bottom: 20px; font-weight: 400; color: var(--silver); font-size: 1.8rem;">Modern Technology & AI Integration</h3>
+        <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;">Integrating the latest in Generative AI and UX Design to streamline workflows, enhance human-computer interaction, and maximize organizational productivity.</p>
+        
+        <ul class="cert-list">
+            <li>Foundations of User Experience (UX) Design – Google</li>
+            <li>Generative AI: Intro & Applications – IBM</li>
+            <li>Introduction to Artificial Intelligence (AI) – IBM</li>
+            <li>Introduction to AI – Google</li>
+            <li>Maximize Productivity With AI Tools – Google</li>
+            <li>Use AI Responsibly – Google</li>
+            <li>Stay Ahead of the AI Curve – Google</li>
+            <li>Discover the Art of Prompting – Google</li>
+        </ul>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="contact-section">
+        <h2 class="section-title">Ready to Elevate Your Team?</h2>
+        <div class="contact-info">
+            <p style="margin-bottom: 30px; color: #555;">Let's connect to discuss how Mental Altitude Consulting can help you optimize human performance, safety, and leadership.</p>
+            <p>📧 <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a></p>
+            <p>📞 <strong>(361) 343-6278</strong></p>
+            <p style="margin-top: 30px; font-size: 1.1rem;">
+                🌐 <a href="https://github.com/stephenlagerberg/portfolio" target="_blank">View Technical Portfolio on GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Mental Altitude Consulting&trade; | Stephen Lagerberg, Ph.D. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
