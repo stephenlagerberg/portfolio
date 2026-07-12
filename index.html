@@ -1,337 +1,238 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stephen Lagerberg, Ph.D. | Mental Altitude</title>
-  <style>
-    :root {
-      --primary-color: #0b2545;
-      --secondary-color: #13315c;
-      --accent-color: #8da9c4;
-      --text-color: #333333;
-      --bg-color: #f8f9fa;
-      --white: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stephen Lagerberg, Ph.D. | Mental Altitude</title>
+    <style>
+        :root {
+            --primary-color: #1a365d; /* Deep Navy Blue */
+            --secondary-color: #2b6cb0;
+            --text-color: #333333;
+            --bg-color: #f7fafc;
+            --white: #ffffff;
+        }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
 
-    body {
-      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
-      color: var(--text-color);
-      background-color: var(--bg-color);
-    }
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 40px 60px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
 
-    /* Header & Navigation */
-    header {
-      background-color: var(--primary-color);
-      color: var(--white);
-      padding: 20px 0;
-      position: sticky;
-      top: 0;
-      z-index: 100;
-    }
+        h1 {
+            color: var(--primary-color);
+            margin: 0 0 10px 0;
+            font-size: 2.5em;
+        }
 
-    .header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
+        .subtitle {
+            font-size: 1.2em;
+            color: var(--secondary-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
 
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      color: var(--white);
-      text-decoration: none;
-    }
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            font-size: 0.95em;
+        }
 
-    .logo span {
-      display: block;
-      font-size: 0.9rem;
-      font-weight: normal;
-      color: var(--accent-color);
-    }
+        .contact-info a {
+            color: var(--secondary-color);
+            text-decoration: none;
+        }
 
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 20px;
-    }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
 
-    nav a {
-      color: var(--white);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease;
-    }
+        h2 {
+            color: var(--primary-color);
+            border-bottom: 1px solid #e2e8f0;
+            padding-bottom: 8px;
+            margin-top: 35px;
+            font-size: 1.5em;
+        }
 
-    nav a:hover {
-      color: var(--accent-color);
-    }
+        p {
+            margin-bottom: 15px;
+        }
 
-    /* Hero Section */
-    .hero {
-      background-color: var(--white);
-      padding: 80px 0;
-      text-align: center;
-      border-bottom: 1px solid #ddd;
-    }
+        ul {
+            margin-top: 0;
+            padding-left: 20px;
+        }
 
-    .hero h1 {
-      font-size: 2.8rem;
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
+        li {
+            margin-bottom: 8px;
+        }
 
-    .hero h2 {
-      font-size: 1.5rem;
-      color: var(--secondary-color);
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
+        .job-title, .degree-title {
+            font-weight: bold;
+            color: #2d3748;
+        }
 
-    .hero p {
-      font-size: 1.1rem;
-      max-width: 700px;
-      margin: 0 auto;
-      color: #555;
-    }
+        .date-company {
+            font-style: italic;
+            color: #4a5568;
+        }
 
-    /* Sections General */
-    section {
-      padding: 60px 0;
-    }
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 10px;
+        }
 
-    section h2 {
-      font-size: 2rem;
-      color: var(--primary-color);
-      margin-bottom: 30px;
-      text-align: center;
-    }
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.9em;
+            color: #718096;
+        }
 
-    /* About Section */
-    .about-content {
-      background: var(--white);
-      padding: 40px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-
-    /* Services Section */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 30px;
-    }
-
-    .service-card {
-      background: var(--white);
-      padding: 30px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-      border-top: 4px solid var(--secondary-color);
-    }
-
-    .service-card h3 {
-      color: var(--secondary-color);
-      margin-bottom: 15px;
-    }
-
-    /* Certifications Section */
-    .cert-grid {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .cert-card {
-      display: flex;
-      align-items: center;
-      gap: 25px;
-      background: var(--white);
-      padding: 25px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-    }
-
-    .cert-image {
-      max-width: 200px;
-      height: auto;
-      border: 1px solid #ddd;
-      border-radius: 4px;
-    }
-
-    .cert-details h3 {
-      color: var(--secondary-color);
-      margin-bottom: 10px;
-    }
-
-    .cert-details p {
-      margin-bottom: 5px;
-      font-size: 0.95rem;
-    }
-
-    .verify-link {
-      display: inline-block;
-      margin-top: 10px;
-      color: var(--secondary-color);
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    .verify-link:hover {
-      text-decoration: underline;
-    }
-
-    /* Footer */
-    footer {
-      background-color: var(--primary-color);
-      color: var(--white);
-      text-align: center;
-      padding: 30px 0;
-    }
-
-    footer p {
-      margin-bottom: 10px;
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      .header-content {
-        flex-direction: column;
-        gap: 15px;
-      }
-      
-      nav ul {
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-
-      .hero h1 {
-        font-size: 2.2rem;
-      }
-
-      .cert-card {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+        @media (max-width: 600px) {
+            .container {
+                margin: 0;
+                padding: 20px;
+                border-radius: 0;
+            }
+        }
+    </style>
 </head>
 <body>
 
-  <header>
-    <div class="container header-content">
-      <a href="#" class="logo">
-        Mental Altitude
-        <span>Aviation AI & Human Factors</span>
-      </a>
-      <nav>
-        <ul>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#education">Education</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-      </nav>
-    </div>
-  </header>
-
-  <section class="hero">
     <div class="container">
-      <h1>Stephen Lagerberg, Ph.D.</h1>
-      <h2>Human Performance & Aviation Psychology Consultant</h2>
-      <p>Bridging the gap between complex autonomous systems and human operators. Specializing in the psychological impact and safe integration of artificial intelligence in high-stakes aviation environments.</p>
+        <header>
+            <h1>Stephen Lagerberg, Ph.D., PHDGPSY</h1>
+            <div class="subtitle">Mental Altitude</div>
+            <div class="contact-info">
+                <span>📧 <a href="mailto:Stephen.Lagerberg@my.gcu.edu">Stephen.Lagerberg@my.gcu.edu</a></span>
+                <span>📧 <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a></span>
+                <span>📞 (361) 343-6278</span>
+                <span>🌐 <a href="https://github.com/stephenlagerberg/portfolio" target="_blank">GitHub Portfolio</a></span>
+            </div>
+        </header>
+
+        <section id="summary">
+            <h2>Professional Summary</h2>
+            <p>Experienced Air Traffic Manager and Adjunct Professor with a strong background in aviation operations, air traffic control, and performance psychology. My career spans military, commercial, and academic sectors, with expertise in situational awareness, decision-making, and leadership development. Currently serving as Air Traffic Manager at Robinson Aviation (RVA), Inc., I lead operations at the McAllen, Texas International Airport, ensuring safe and efficient airspace management.</p>
+            <p>In addition to aviation, I hold a Ph.D. in Performance Psychology and teach undergraduate and graduate psychology courses at Grand Canyon University, focusing on topics such as cognitive neuroscience, coaching, and leadership. My research centers on air traffic controller well-being, stress management, and human resilience, with publications addressing burnout and psychological health in aviation professionals. With experience in public administration, social justice, and military operations, I bring a multifaceted approach to problem-solving, mentorship, and strategic planning. I am passionate about enhancing aviation safety, fostering teamwork, and applying psychological insights to optimize human performance.</p>
+        </section>
+
+        <section id="education">
+            <h2>Education</h2>
+            <ul>
+                <li><span class="degree-title">Ph.D. in General Psychology</span> — Grand Canyon University <span class="date-company">(2021)</span></li>
+            </ul>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <ul>
+                <li><span class="job-title">Air Traffic Manager</span> — <span class="date-company">RVA (2021 – Present)</span></li>
+                <li><span class="job-title">Air Traffic Control Tower Supervisor</span> — <span class="date-company">DynCorp International (2020 – 2021)</span></li>
+                <li><span class="job-title">Flight Planning Chief</span> — <span class="date-company">United States Navy (2007 – 2019)</span></li>
+            </ul>
+        </section>
+
+        <section id="teaching">
+            <h2>Teaching Experience</h2>
+            <p><span class="job-title">Adjunct Professor</span> — <span class="date-company">Grand Canyon University (2022 – Present)</span></p>
+            <p><strong>Courses Taught:</strong></p>
+            <ul class="course-grid">
+                <li>Lifespan Development (PSY-357)</li>
+                <li>Cognitive Neuroscience (PSY-402)</li>
+                <li>Psychology of Coaching (PSY-410)</li>
+                <li>Leadership and Team Building (PSY-425)</li>
+                <li>Experimental Psychology (PSY-452)</li>
+                <li>Abnormal Psychology (PSY-470)</li>
+                <li>Professional Capstone Project (PSY-495)</li>
+                <li>Adolescent Psychology for Coaches (PSY-5350TE)</li>
+                <li>Sports Psychology for Coaches (PSY-5360TE)</li>
+            </ul>
+        </section>
+
+        <section id="publications">
+            <h2>Publications</h2>
+            <ul>
+                <li>Lagerberg, S. E., & Lane, R. J. (2023). <em>Air Traffic Controller Health and Well-Being</em>.</li>
+                <li>Lagerberg, S. E. (2021). <em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em>.</li>
+            </ul>
+        </section>
+
+        <section id="affiliations-awards">
+            <h2>Professional Affiliations & Awards</h2>
+            <ul>
+                <li>Member, APA Division 47 <span class="date-company">(2025 – Present)</span></li>
+                <li>Member, APA Division 19 <span class="date-company">(2025 – Present)</span></li>
+                <li>Member, APA Division 1 <span class="date-company">(2025 – Present)</span></li>
+                <li>Psi Chi, the International Honor Society in Psychology <span class="date-company">(2018)</span></li>
+            </ul>
+        </section>
+
+        <section id="certifications">
+            <h2>Professional Certifications</h2>
+            <ul>
+                <li><strong>Foundations of User Experience (UX) Design</strong> – Google / Coursera (July 2026)</li>
+                <li><strong>Generative AI: Introduction and Applications</strong> – IBM / Coursera (July 2026)</li>
+                <li><strong>Introduction to Artificial Intelligence (AI)</strong> – IBM / Coursera (July 2026)</li>
+                <li><strong>Introduction to AI</strong> – Google / Coursera (June 2026)</li>
+                <li><strong>Maximize Productivity With AI Tools</strong> – Google / Coursera (June 2026)</li>
+                <li><strong>Use AI Responsibly</strong> – Google / Coursera (June 2026)</li>
+                <li><strong>Stay Ahead of the AI Curve</strong> – Google / Coursera (June 2026)</li>
+                <li><strong>Discover the Art of Prompting</strong> – Google / Coursera (June 2026)</li>
+                <li>Unofficial Transcript</li>
+            </ul>
+        </section>
+
+        <section id="development">
+            <h2>Professional Development</h2>
+            <ul class="course-grid">
+                <li>GCU AI Student Policy and Faculty Procedures (2025)</li>
+                <li>AI 101 and Paradigm Shift (2025)</li>
+                <li>Statement of Expectation for GCU Staff (2023)</li>
+                <li>Halo Learn (2022)</li>
+                <li>NCAA Division 1: Compliance Module (2022)</li>
+                <li>Title IX: Compliance Module (2022)</li>
+                <li>Participation On Demand Workshop (2022)</li>
+                <li>FERPA (RETIRED) (2022)</li>
+                <li>Active Threats Response Training (2022)</li>
+                <li>College Specific Training: CHSS (2022)</li>
+                <li>General Data Protection Regulation (RETIRED) (2022)</li>
+                <li>Academic Integrity: Compliance Module (2022)</li>
+                <li>Doctrinal Statement: Compliance Module (2022)</li>
+                <li>Providing Effective Feedback (2022)</li>
+            </ul>
+        </section>
+
+        <footer>
+            <p>&copy; 2026 Stephen Lagerberg, Ph.D. | Mental Altitude. All rights reserved.</p>
+        </footer>
     </div>
-  </section>
-
-  <section id="about" class="container">
-    <h2>About My Practice</h2>
-    <div class="about-content">
-      <p>I apply a Ph.D. in psychology alongside operational experience in the military and air traffic control to solve critical human-machine interface challenges. As artificial intelligence and automated decision support tools become standard in aviation, understanding how human operators process information, manage cognitive load, and make decisions under stress is vital.</p>
-      <br>
-      <p>My work at Mental Altitude ensures that new aerospace technologies are designed around human capabilities rather than forcing operators to adapt to rigid systems. I provide remote consulting services to organizations looking to build safer, more intuitive operational environments.</p>
-    </div>
-  </section>
-
-  <section id="services" class="container" style="background-color: var(--bg-color);">
-    <h2>Consulting Services</h2>
-    <div class="services-grid">
-      <div class="service-card">
-        <h3>Cognitive Workload Assessments</h3>
-        <p>Evaluating human performance and stress responses during the integration of new flight deck automation and air traffic control decision support tools.</p>
-      </div>
-      <div class="service-card">
-        <h3>AI Automation Bias Evaluation</h3>
-        <p>Analyzing behavioral reliance on artificial intelligence systems to prevent complacency and improve critical decision-making in the loop.</p>
-      </div>
-      <div class="service-card">
-        <h3>User Experience (UX) Research</h3>
-        <p>Conducting specialized usability testing and human-centered design evaluations for aviation interfaces to ensure intuitive, accessible, and safe operations.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="education" class="container">
-    <h2>Education & Certifications</h2>
-    <div class="cert-grid">
-      
-      <div class="cert-card">
-        <div class="cert-details">
-          <h3>Doctor of Philosophy (Ph.D.) in Psychology</h3>
-          <p><strong>Focus:</strong> Aviation Psychology and Human Performance</p>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <!-- Save your Coursera image as 'google-ux-certificate.jpg' in an 'images' folder -->
-        <img src="images/google-ux-certificate.jpg" alt="Google Foundations of User Experience (UX) Design Certificate" class="cert-image">
-        <div class="cert-details">
-          <h3>Foundations of User Experience (UX) Design</h3>
-          <p><strong>Issuer:</strong> Google via Coursera</p>
-          <p><strong>Date Completed:</strong> July 11, 2026</p>
-          <p><strong>Recipient:</strong> Stephen Lagerberg, Ph.D.</p>
-          <p>Focused on user-centered design, accessibility, and translating complex human behaviors into intuitive digital interactions.</p>
-          <a href="https://coursera.org/verify/1SWM7OSMAH82" target="_blank" class="verify-link">Verify Certificate</a>
-        </div>
-      </div>
-
-      <div class="cert-card">
-        <div class="cert-details">
-          <h3>Google AI Essentials</h3>
-          <p><strong>Issuer:</strong> Google via Coursera</p>
-          <p>Focused on the practical application of artificial intelligence tools and their impact on operational workflows.</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <section id="contact" class="container" style="text-align: center;">
-    <h2>Get In Touch</h2>
-    <p>Available for remote consulting opportunities and project collaborations.</p>
-    <br>
-    <a href="mailto:contact@example.com" class="verify-link" style="font-size: 1.2rem;">Contact Me</a>
-  </section>
-
-  <footer>
-    <div class="container">
-      <p>&copy; 2026 Stephen Lagerberg, Ph.D. | Mental Altitude.</p>
-      <p>Aviation AI & Human Factors Consulting</p>
-    </div>
-  </footer>
 
 </body>
 </html>
