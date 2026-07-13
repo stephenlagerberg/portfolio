@@ -56,18 +56,18 @@
             align-items: center; 
         } 
 
-        /* Updated Logo Class for Prominence */
-        .brand-logo { 
-            max-height: 100px; /* Increased from 50px */
-            width: auto; 
-            display: block; 
-        } 
+        .nav-brand {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #1A202C;
+            text-decoration: none;
+        }
 
         .nav-links { 
             list-style: none; 
             display: flex; 
             gap: 2rem; 
-            align-items: center; /* Ensures text aligns vertically with the larger logo */
+            align-items: center; 
         } 
 
         .nav-links a { 
@@ -85,9 +85,18 @@
         .hero { 
             background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); 
             color: #FFFFFF; 
-            padding: 6rem 2rem; 
+            padding: 5rem 2rem 6rem 2rem; 
             text-align: center; 
         } 
+
+        /* Main Prominent Logo */
+        .hero-logo {
+            max-height: 220px; /* Made significantly larger */
+            width: auto;
+            display: block;
+            margin: 0 auto 2rem auto; /* Centers the image and adds space below */
+            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3)); /* Adds a slight shadow to pop off the dark background */
+        }
 
         .hero h1 { 
             color: #FFFFFF; 
@@ -217,7 +226,7 @@
     <header>
         <div class="nav-container">
             <div>
-                <img class="brand-logo" alt="Mental Altitude Consulting Logo" src="https://i.postimg.cc/76fsKcQP/logo.png">
+                <a href="#" class="nav-brand">Mental Altitude Consulting</a>
             </div>
             <ul class="nav-links">
                 <li><a href="#services">Expertise</a></li>
@@ -229,6 +238,8 @@
     </header>
 
     <div class="hero">
+        <img class="hero-logo" alt="Mental Altitude Consulting Logo" src="https://i.postimg.cc/76fsKcQP/logo.png">
+        
         <h1>Stephen Lagerberg, Ph.D.</h1>
         <p class="subtitle">Optimizing Human Performance, Resilience, and Leadership in High-Stakes Environments.</p>
         <a class="cta-button" href="#contact">Schedule a Consultation</a>
