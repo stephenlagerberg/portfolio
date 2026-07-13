@@ -4,109 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Altitude Consulting | Stephen Lagerberg, Ph.D.</title>
-    <!-- Add your CSS file link here if you have one, e.g., <link rel="stylesheet" href="style.css"> -->
-</head>
-<body>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Reset & Base Styles */ 
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+        } 
 
-    <nav>
-        <div>Mental Altitude Consulting</div>
-        <div>
-            <a href="#services">Expertise</a>
-            <a href="#about">About</a>
-            <a href="#credentials">Credentials &amp; AI</a>
-            <a href="#contact">Contact</a>
-        </div>
-    </nav>
+        body { 
+            font-family: 'Inter', sans-serif; 
+            line-height: 1.6; 
+            color: #2D3748; 
+            background-color: #F7FAFC; 
+        } 
 
-    <header>
-        <div>
-            <!-- Your updated logo is right here -->
-            <img alt="Mental Altitude Consulting Logo" src="https://i.postimg.cc/76fsKcQP/logo.png">
-            <span>™</span>
-        </div>
-        <h1>Stephen Lagerberg, Ph.D.</h1>
-        <h2>Optimizing Human Performance, Resilience, and Leadership in High-Stakes Environments.</h2>
-        <a href="#contact">Schedule a Consultation</a>
-    </header>
+        /* Typography */ 
+        h1, h2, h3, h4 { 
+            color: #1A202C; 
+            margin-bottom: 1rem; 
+        } 
 
-    <section id="services">
-        <h2>Core Consulting Expertise</h2>
-        <div>
-            <div>
-                <h3>Aviation &amp; Operations Management</h3>
-                <p>Drawing on a distinguished career as a U.S. Navy Flight Planning Chief and current Air Traffic Manager at RVA. Providing expert guidance on situational awareness, airspace management, safety protocols, and operational efficiency under high-stress conditions.</p>
-            </div>
-            <div>
-                <h3>Performance Psychology &amp; Coaching</h3>
-                <p>Applying advanced cognitive neuroscience and sports psychology to optimize individual and team output. Dedicated to mitigating operational burnout, enhancing high-speed decision-making, and building unshakeable mental resilience.</p>
-            </div>
-            <div>
-                <h3>Leadership &amp; Team Building</h3>
-                <p>Developing robust organizational cultures based on proven psychological frameworks. Bridging the gap between academic theory and practical, boots-on-the-ground leadership to foster operational cohesion, deep trust, and sustained excellence.</p>
-            </div>
-        </div>
-    </section>
+        h1 { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            line-height: 1.2; 
+        } 
 
-    <section id="about">
-        <h2>About Dr. Stephen Lagerberg</h2>
-        <div>
-            <p>I am a performance psychology consultant, aviation manager, and academic professional dedicated to elevating human potential. With a Ph.D. in General Psychology from Grand Canyon University, my research and practice focus on how individuals and teams navigate stress, maintain situational awareness, and lead effectively.</p>
-            <p>My career is fundamentally rooted in high-stakes environments. From serving as a Flight Planning Chief in the United States Navy to my current role managing complex air traffic operations at McAllen International Airport, I understand that human performance is the single most critical variable in any complex system.</p>
-            <p>As an Adjunct Professor, I teach the next generation of leaders in cognitive neuroscience, experimental psychology, and the psychology of coaching. I bring this multifaceted, evidence-based approach directly to my consulting clients, providing strategies that are rigorously tested and immediately actionable in the field.</p>
-        </div>
-    </section>
+        h2 { 
+            font-size: 2rem; 
+            text-align: center; 
+            margin-bottom: 2rem; 
+        } 
 
-    <section id="credentials">
-        <h2>Credentials &amp; Publications</h2>
-        
-        <div>
-            <div>
-                <h4>Academic Background</h4>
-                <p><strong>Ph.D. in General Psychology</strong><br>Grand Canyon University (2021)</p>
-                <p>Adjunct Professor teaching Cognitive Neuroscience, Sports Psychology, Lifespan Development, and Leadership.</p>
-            </div>
-            <div>
-                <h4>Key Publications</h4>
-                <p><em>Air Traffic Controller Health and Well-Being</em> (2023)</p>
-                <p><em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em> (2021)</p>
-            </div>
-            <div>
-                <h4>Professional Affiliations</h4>
-                <p>Member, APA Division 1, 19, and 47</p>
-                <p>Psi Chi International Honor Society in Psychology</p>
-            </div>
-        </div>
+        /* Header & Navigation */ 
+        header { 
+            background-color: #FFFFFF; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+        } 
 
-        <h3>Modern Technology &amp; AI Integration</h3>
-        <p>Integrating the latest in Generative AI and UX Design to streamline workflows, enhance human-computer interaction, and maximize organizational productivity.</p>
-        
-        <ul>
-            <li>Foundations of User Experience (UX) Design – Google</li>
-            <li>Generative AI: Intro &amp; Applications – IBM</li>
-            <li>Introduction to Artificial Intelligence (AI) – IBM</li>
-            <li>Introduction to AI – Google</li>
-            <li>Maximize Productivity With AI Tools – Google</li>
-            <li>Use AI Responsibly – Google</li>
-            <li>Stay Ahead of the AI Curve – Google</li>
-            <li>Discover the Art of Prompting – Google</li>
-        </ul>
-    </section>
+        .nav-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 1rem 2rem; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+        } 
 
-    <section id="contact">
-        <h2>Ready to Elevate Your Team?</h2>
-        <div>
-            <p>Let's connect to discuss how Mental Altitude Consulting can help you optimize human performance, safety, and leadership.</p>
-            <p>📧 <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a></p>
-            <p>📞 <strong>(361) 343-6278</strong></p>
-            <p>
-                🌐 <a href="https://github.com/stephenlagerberg/portfolio" target="_blank">View Technical Portfolio on GitHub</a>
-            </p>
-        </div>
-    </section>
+        .brand-logo { 
+            max-height: 50px; 
+            width: auto; 
+            display: block; 
+        } 
 
-    <footer>
-        <p>© 2026 Mental Altitude Consulting™ | Stephen Lagerberg, Ph.D. All Rights Reserved.</p>
-    </footer>
+        .nav-links { 
+            list-style: none; 
+            display: flex; 
+            gap: 2rem; 
+        } 
 
-</body>
-</html>
+        .nav-links a { 
+            text-decoration: none; 
+            color: #4A5568; 
+            font-weight: 600; 
+            transition: color 0.3s ease; 
+        } 
+
+        .nav-links a:hover { 
+            color: #003366; /* Aviation Navy */ 
+        } 
+
+        /* Hero Section */ 
+        .hero { 
+            /* Updated gradient for a slightly more precise, technical feel */ 
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%); 
+            color: #FFFFFF; 
+            padding: 6rem 2rem; 
+            text-align: center; 
+        } 
+
+        .hero h1 { 
+            color: #FFFFFF; 
+            max-width: 900px; 
+            margin: 0 auto 1.5rem auto; 
+        } 
+
+        .subtitle { 
+            font-size: 1.25rem; 
+            font-weight: 300; 
+            margin-bottom: 2.5rem; 
+            opacity: 0.9; 
+        } 
+
+        /* Buttons */ 
+        .cta-button { 
+            display: inline-block;
