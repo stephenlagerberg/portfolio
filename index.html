@@ -103,4 +103,220 @@
 
         /* Buttons */ 
         .cta-button { 
-            display: inline-block;
+            display: inline-block; 
+            background-color: #F8FAFC; 
+            color: #0f172a; 
+            padding: 0.75rem 2rem; 
+            border-radius: 4px; 
+            text-decoration: none; 
+            font-weight: 700; 
+            transition: background-color 0.3s ease; 
+        } 
+
+        .cta-button:hover { 
+            background-color: #CBD5E1; 
+        } 
+
+        /* Layout Containers */ 
+        .section-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 5rem 2rem; 
+        } 
+
+        .bg-light { 
+            background-color: #F1F5F9; 
+        } 
+
+        .section-desc { 
+            text-align: center; 
+            margin-bottom: 3rem; 
+            font-size: 1.1rem; 
+            color: #64748B; 
+        } 
+
+        /* Grids & Cards */ 
+        .grid-3 { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+            gap: 2rem; 
+        } 
+
+        .card { 
+            background: #FFFFFF; 
+            padding: 2rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            border-top: 4px solid #1e3a8a; /* Accent matches hero */ 
+        } 
+
+        /* Case Study Section */ 
+        .case-study-card { 
+            background: #FFFFFF; 
+            padding: 3rem; 
+            border-radius: 8px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            margin-bottom: 2rem; 
+        } 
+
+        .case-grid { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 2rem; 
+            margin-top: 2rem; 
+            margin-bottom: 2rem; 
+        } 
+
+        .case-grid h4 { 
+            font-size: 1rem; 
+            color: #1e3a8a; 
+            margin-bottom: 0.5rem; 
+        } 
+
+        .text-link { 
+            color: #2563eb; 
+            text-decoration: none; 
+            font-weight: 600; 
+        } 
+
+        .text-link:hover { 
+            text-decoration: underline; 
+        } 
+
+        /* Contact Box */ 
+        .contact-box { 
+            background: #0f172a; 
+            color: #FFFFFF; 
+            padding: 4rem 2rem; 
+            text-align: center; 
+            border-radius: 8px; 
+        } 
+
+        .contact-box h2 { 
+            color: #FFFFFF; 
+        } 
+
+        .contact-box p { 
+            margin-bottom: 2rem; 
+            font-size: 1.1rem; 
+        } 
+
+        /* Footer */ 
+        footer { 
+            text-align: center; 
+            padding: 2rem; 
+            color: #64748B; 
+            background-color: #FFFFFF; 
+            border-top: 1px solid #E2E8F0; 
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div>
+                <img class="brand-logo" alt="Mental Altitude Consulting Logo" src="https://i.postimg.cc/76fsKcQP/logo.png">
+            </div>
+            <ul class="nav-links">
+                <li><a href="#services">Expertise</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#credentials">Credentials &amp; AI</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="hero">
+        <h1>Stephen Lagerberg, Ph.D.</h1>
+        <p class="subtitle">Optimizing Human Performance, Resilience, and Leadership in High-Stakes Environments.</p>
+        <a class="cta-button" href="#contact">Schedule a Consultation</a>
+    </div>
+
+    <section id="services" class="section-container">
+        <h2>Core Consulting Expertise</h2>
+        <div class="grid-3">
+            <div class="card">
+                <h3>Aviation &amp; Operations Management</h3>
+                <p>Drawing on a distinguished career as a U.S. Navy Flight Planning Chief and current Air Traffic Manager at RVA. Providing expert guidance on situational awareness, airspace management, safety protocols, and operational efficiency under high-stress conditions.</p>
+            </div>
+            <div class="card">
+                <h3>Performance Psychology &amp; Coaching</h3>
+                <p>Applying advanced cognitive neuroscience and sports psychology to optimize individual and team output. Dedicated to mitigating operational burnout, enhancing high-speed decision-making, and building unshakeable mental resilience.</p>
+            </div>
+            <div class="card">
+                <h3>Leadership &amp; Team Building</h3>
+                <p>Developing robust organizational cultures based on proven psychological frameworks. Bridging the gap between academic theory and practical, boots-on-the-ground leadership to foster operational cohesion, deep trust, and sustained excellence.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="section-container bg-light">
+        <h2>About Dr. Stephen Lagerberg</h2>
+        <div class="case-study-card">
+            <p>I am a performance psychology consultant, aviation manager, and academic professional dedicated to elevating human potential. With a Ph.D. in General Psychology from Grand Canyon University, my research and practice focus on how individuals and teams navigate stress, maintain situational awareness, and lead effectively.</p>
+            <br>
+            <p>My career is fundamentally rooted in high-stakes environments. From serving as a Flight Planning Chief in the United States Navy to my current role managing complex air traffic operations at McAllen International Airport, I understand that human performance is the single most critical variable in any complex system.</p>
+            <br>
+            <p>As an Adjunct Professor, I teach the next generation of leaders in cognitive neuroscience, experimental psychology, and the psychology of coaching. I bring this multifaceted, evidence-based approach directly to my consulting clients, providing strategies that are rigorously tested and immediately actionable in the field.</p>
+        </div>
+    </section>
+
+    <section id="credentials" class="section-container">
+        <h2>Credentials &amp; Publications</h2>
+        
+        <div class="case-study-card">
+            <div class="case-grid">
+                <div>
+                    <h4>Academic Background</h4>
+                    <p><strong>Ph.D. in General Psychology</strong><br>Grand Canyon University (2021)</p>
+                    <p>Adjunct Professor teaching Cognitive Neuroscience, Sports Psychology, Lifespan Development, and Leadership.</p>
+                </div>
+                <div>
+                    <h4>Key Publications</h4>
+                    <p><em>Air Traffic Controller Health and Well-Being</em> (2023)</p>
+                    <p><em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em> (2021)</p>
+                </div>
+                <div>
+                    <h4>Professional Affiliations</h4>
+                    <p>Member, APA Division 1, 19, and 47</p>
+                    <p>Psi Chi International Honor Society in Psychology</p>
+                </div>
+            </div>
+
+            <hr style="margin: 2rem 0; border: 0; border-top: 1px solid #E2E8F0;">
+
+            <h3>Modern Technology &amp; AI Integration</h3>
+            <p>Integrating the latest in Generative AI and UX Design to streamline workflows, enhance human-computer interaction, and maximize organizational productivity.</p>
+            <br>
+            <ul style="list-style-position: inside;">
+                <li>Foundations of User Experience (UX) Design – Google</li>
+                <li>Generative AI: Intro &amp; Applications – IBM</li>
+                <li>Introduction to Artificial Intelligence (AI) – IBM</li>
+                <li>Introduction to AI – Google</li>
+                <li>Maximize Productivity With AI Tools – Google</li>
+                <li>Use AI Responsibly – Google</li>
+                <li>Stay Ahead of the AI Curve – Google</li>
+                <li>Discover the Art of Prompting – Google</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="contact" class="section-container">
+        <div class="contact-box">
+            <h2>Ready to Elevate Your Team?</h2>
+            <p>Let's connect to discuss how Mental Altitude Consulting can help you optimize human performance, safety, and leadership.</p>
+            <p style="margin-bottom: 0.5rem;">📧 <a href="mailto:stephenlagerberg@gmail.com" class="text-link" style="color: #60a5fa;">stephenlagerberg@gmail.com</a></p>
+            <p style="margin-bottom: 1.5rem;">📞 <strong>(361) 343-6278</strong></p>
+            <p>
+                🌐 <a href="https://github.com/stephenlagerberg/portfolio" target="_blank" class="cta-button" style="padding: 0.5rem 1rem; font-size: 0.9rem;">View Technical Portfolio on GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 Mental Altitude Consulting™ | Stephen Lagerberg, Ph.D. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
