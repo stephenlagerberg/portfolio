@@ -42,6 +42,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            flex-wrap: wrap; /* Allows wrapping on very small screens */
         }
 
         .nav-brand {
@@ -50,6 +51,20 @@
             letter-spacing: 1px;
             color: var(--silver);
             text-transform: uppercase;
+        }
+
+        .nav-brand-name {
+            font-weight: 400; 
+            color: #8da4bc; 
+            font-size: 0.85rem;
+            margin-left: 5px;
+            text-transform: none;
+            letter-spacing: normal;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
         }
 
         .nav-links a {
@@ -328,6 +343,10 @@
             .nav-links {
                 display: none; 
             }
+            .nav-brand-name {
+                display: block;
+                margin-left: 0;
+            }
             .main-logo {
                 max-width: 90%;
             }
@@ -344,7 +363,9 @@
 <body>
 
     <nav>
-        <div class="nav-brand">Mental Altitude Consulting</div>
+        <div class="nav-brand">
+            Mental Altitude Consulting <span class="nav-brand-name">| Stephen E. Lagerberg, Ph.D.</span>
+        </div>
         <div class="nav-links">
             <a href="#services">Expertise</a>
             <a href="#about">About</a>
@@ -360,6 +381,10 @@
             <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Mental Altitude Consulting Logo" class="main-logo">
             <span class="tm-symbol">&trade;</span>
         </div>
+        
+        <!-- Executive Name Kicker -->
+        <p style="color: var(--accent); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-size: 0.95rem;">Stephen E. Lagerberg, Ph.D.</p>
+        
         <h1>Mastering the Human Element in High-Stakes Environments.</h1>
         <h2>From the air traffic control tower to the enterprise boardroom. Mental Altitude Consulting applies cognitive neuroscience, human factors engineering, and strategic AI integration to mitigate cognitive fatigue and optimize operational safety in zero-margin environments.</h2>
         <a href="#contact" class="cta-btn">Schedule a Consultation</a>
@@ -372,7 +397,7 @@
             
             <div class="service-card">
                 <h3>Human Factors & Aviation Operations</h3>
-                <p>Drawing on over a decade of military flight planning and active civilian air traffic management, we bridge the gap between psychological theory and zero-margin execution. We audit Safety Management Systems (SMS), enhance situational awareness protocols, and design human-centric workflows that actively mitigate risk and eliminate human error in complex aerospace environments.</p>
+                <p>Drawing on over a decade of military air traffic control and active civilian airspace management, we bridge the gap between psychological theory and zero-margin execution. We audit Safety Management Systems (SMS), enhance situational awareness protocols, and design human-centric workflows that actively mitigate risk and eliminate human error in complex aerospace environments.</p>
             </div>
             
             <div class="service-card">
@@ -382,7 +407,7 @@
             
             <div class="service-card">
                 <h3>Cognitive Fatigue & Operational Resilience</h3>
-                <p>High operational output is only valuable if it is sustainable. Grounded in rigorous Ph.D.-level research on air traffic controller well-being, we design evidence-based fatigue management and mental conditioning frameworks. We help enterprise leaders protect their human capital, sustain peak cognitive output, and prevent costly burnout in high-tempo, high-stress environments.</p>
+                <p>High operational output is only valuable if it is sustainable. Grounded in rigorous Ph.D. level research on air traffic controller well-being, we design evidence-based fatigue management and mental conditioning frameworks. We help enterprise leaders protect their human capital, sustain peak cognitive output, and prevent costly burnout in high-tempo, high-stress environments.</p>
             </div>
 
         </div>
@@ -394,7 +419,7 @@
         <div class="about-content">
             <p><strong>I specialize in the most critical variable of any complex system: human performance under pressure.</strong></p>
             
-            <p>I hold a Ph.D. in General Psychology, but my expertise wasn't solely built in a classroom—it was forged in zero-margin environments. Serving over a decade as a U.S. Navy Flight Planning Chief and currently directing complex airspace as an Air Traffic Manager, I have spent my career managing intense cognitive load and mitigating operational fatigue where split-second decisions matter most.</p>
+            <p>I hold a Ph.D. in General Psychology with an emphasis in Performance Psychology, but my expertise wasn't solely built in a classroom. It was forged in zero-margin environments. Serving over a decade as a U.S. Navy Air Traffic Controller and currently directing complex airspace as an Air Traffic Manager, I have spent my career managing intense cognitive load and mitigating operational fatigue where split-second decisions matter most.</p>
             
             <p>I combine this boots-on-the-ground operational experience with rigorous academic science. As an Adjunct Professor teaching Cognitive Neuroscience and Sports Psychology, I translate the latest research into actionable, battle-tested strategies for my consulting clients.</p>
             
@@ -409,7 +434,9 @@
         <div class="cred-grid">
             <div class="cred-box">
                 <h4>Academic Background</h4>
-                <p><strong>Ph.D. in General Psychology</strong><br>Grand Canyon University (2021)</p>
+                <p><strong>Ph.D. in General Psychology</strong><br>
+                <span style="color: var(--accent); font-weight: 600;">Emphasis in Performance Psychology</span><br>
+                Grand Canyon University (2021)</p>
                 <p style="margin-top: 10px;">Adjunct Professor teaching Cognitive Neuroscience, Sports Psychology, Lifespan Development, and Leadership.</p>
             </div>
             <div class="cred-box">
@@ -419,8 +446,12 @@
             </div>
             <div class="cred-box">
                 <h4>Professional Affiliations</h4>
-                <p>Member, APA Division 1, 19, and 47</p>
-                <p>Psi Chi International Honor Society in Psychology</p>
+                <p><strong>American Psychological Association (APA)</strong></p>
+                <ul style="margin-top: 10px; margin-left: 20px; font-size: 0.95rem;">
+                    <li>Division 19: Military Psychology</li>
+                    <li>Division 47: Performance Psychology</li>
+                    <li>Division 1: General Psychology</li>
+                </ul>
             </div>
         </div>
 
@@ -428,14 +459,14 @@
         <p style="text-align: center; max-width: 800px; margin: 0 auto 40px auto; opacity: 0.9;">Integrating the latest in Generative AI and UX Design to streamline workflows, enhance human-computer interaction, and maximize organizational productivity.</p>
         
         <ul class="cert-list">
-            <li>Foundations of User Experience (UX) Design – Google</li>
-            <li>Generative AI: Intro & Applications – IBM</li>
-            <li>Introduction to Artificial Intelligence (AI) – IBM</li>
-            <li>Introduction to AI – Google</li>
-            <li>Maximize Productivity With AI Tools – Google</li>
-            <li>Use AI Responsibly – Google</li>
-            <li>Stay Ahead of the AI Curve – Google</li>
-            <li>Discover the Art of Prompting – Google</li>
+            <li>Foundations of User Experience (UX) Design - Google</li>
+            <li>Generative AI: Intro & Applications - IBM</li>
+            <li>Introduction to Artificial Intelligence (AI) - IBM</li>
+            <li>Introduction to AI - Google</li>
+            <li>Maximize Productivity With AI Tools - Google</li>
+            <li>Use AI Responsibly - Google</li>
+            <li>Stay Ahead of the AI Curve - Google</li>
+            <li>Discover the Art of Prompting - Google</li>
         </ul>
     </section>
 
