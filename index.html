@@ -42,7 +42,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-            flex-wrap: wrap; /* Allows wrapping on very small screens */
+            flex-wrap: wrap; 
         }
 
         .nav-brand {
@@ -54,10 +54,10 @@
         }
 
         .nav-brand-name {
-            font-weight: 400; 
-            color: #8da4bc; 
-            font-size: 0.85rem;
-            margin-left: 5px;
+            font-weight: 500; 
+            color: var(--light-text); 
+            font-size: 1rem;
+            margin-left: 8px;
             text-transform: none;
             letter-spacing: normal;
         }
@@ -99,10 +99,9 @@
         }
 
         .main-logo {
-            max-width: 550px; /* Large size to stand out */
+            max-width: 550px; 
             width: 100%;
             height: auto;
-            /* Drop shadow makes the transparent parts of the logo pop */
             filter: drop-shadow(0 15px 25px rgba(26, 95, 122, 0.2)); 
             display: block;
         }
@@ -110,11 +109,11 @@
         /* Trademark Symbol Styling */
         .tm-symbol {
             position: absolute;
-            bottom: 22%; /* Adjusts vertical placement near the text */
-            right: -10px;  /* Adjusts horizontal placement */
+            bottom: 22%; 
+            right: -10px;  
             font-size: 1.8rem;
             font-weight: bold;
-            color: #557599; /* Matches the logo's metallic blue */
+            color: #557599; 
             font-family: Arial, sans-serif;
             text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
         }
@@ -123,6 +122,14 @@
             0% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
             100% { transform: translateY(0px); }
+        }
+
+        .hero-name {
+            color: var(--primary);
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            font-size: 1.8rem;
         }
 
         .hero h1 {
@@ -346,9 +353,13 @@
             .nav-brand-name {
                 display: block;
                 margin-left: 0;
+                margin-top: 5px;
             }
             .main-logo {
                 max-width: 90%;
+            }
+            .hero-name {
+                font-size: 1.5rem;
             }
             .hero h1 {
                 font-size: 2rem;
@@ -383,7 +394,7 @@
         </div>
         
         <!-- Executive Name Kicker -->
-        <p style="color: var(--accent); font-weight: bold; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 15px; font-size: 0.95rem;">Stephen E. Lagerberg, Ph.D.</p>
+        <div class="hero-name">Stephen E. Lagerberg, Ph.D.</div>
         
         <h1>Mastering the Human Element in High-Stakes Environments.</h1>
         <h2>From the air traffic control tower to the enterprise boardroom. Mental Altitude Consulting applies cognitive neuroscience, human factors engineering, and strategic AI integration to mitigate cognitive fatigue and optimize operational safety in zero-margin environments.</h2>
