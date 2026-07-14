@@ -46,6 +46,9 @@
         }
 
         .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 15px;
             font-size: 1.2rem;
             font-weight: 600;
             letter-spacing: 1px;
@@ -53,13 +56,24 @@
             text-transform: uppercase;
         }
 
+        .nav-logo {
+            height: 50px;
+            width: auto;
+        }
+
+        .nav-brand-text {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
         .nav-brand-name {
             font-weight: 500; 
             color: var(--light-text); 
-            font-size: 1rem;
-            margin-left: 8px;
+            font-size: 0.85rem;
             text-transform: none;
             letter-spacing: normal;
+            margin-top: -2px;
         }
 
         .nav-links {
@@ -80,48 +94,24 @@
             color: var(--silver);
         }
 
-        /* --- Hero Section (Logo Spotlight) --- */
+        /* --- Hero Section --- */
         .hero {
             background: radial-gradient(circle at center, #ffffff 0%, #eef2f6 100%);
-            padding: 80px 5% 100px;
+            padding: 60px 5% 100px;
             text-align: center;
             border-bottom: 4px solid var(--secondary);
             position: relative;
             overflow: hidden;
         }
 
-        /* Logo & TM Container Setup */
-        .logo-container {
-            position: relative;
-            display: inline-block;
-            margin-bottom: 20px;
-            animation: float 6s ease-in-out infinite;
-        }
-
-        .main-logo {
-            max-width: 550px; 
+        .hero-banner {
             width: 100%;
+            max-width: 1100px;
             height: auto;
-            filter: drop-shadow(0 15px 25px rgba(26, 95, 122, 0.2)); 
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(26, 95, 122, 0.15);
+            margin: 0 auto 40px auto;
             display: block;
-        }
-
-        /* Trademark Symbol Styling */
-        .tm-symbol {
-            position: absolute;
-            bottom: 22%; 
-            right: -10px;  
-            font-size: 1.8rem;
-            font-weight: bold;
-            color: #557599; 
-            font-family: Arial, sans-serif;
-            text-shadow: 1px 1px 2px rgba(255,255,255,0.8);
-        }
-
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-            100% { transform: translateY(0px); }
         }
 
         .hero-name {
@@ -350,23 +340,19 @@
             .nav-links {
                 display: none; 
             }
-            .nav-brand-name {
-                display: block;
-                margin-left: 0;
-                margin-top: 5px;
+            .nav-brand {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
             }
-            .main-logo {
-                max-width: 90%;
+            .nav-logo {
+                height: 40px;
             }
             .hero-name {
                 font-size: 1.5rem;
             }
             .hero h1 {
                 font-size: 2rem;
-            }
-            .tm-symbol {
-                bottom: 20%;
-                font-size: 1.2rem;
             }
         }
     </style>
@@ -375,7 +361,11 @@
 
     <nav>
         <div class="nav-brand">
-            Mental Altitude Consulting <span class="nav-brand-name">| Stephen E. Lagerberg, Ph.D.</span>
+            <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Mental Altitude Consulting Logo" class="nav-logo">
+            <div class="nav-brand-text">
+                Mental Altitude Consulting&trade;
+                <span class="nav-brand-name">Stephen E. Lagerberg, Ph.D.</span>
+            </div>
         </div>
         <div class="nav-links">
             <a href="#services">Expertise</a>
@@ -385,13 +375,9 @@
         </div>
     </nav>
 
-    <!-- HERO SECTION WITH PROMINENT LOGO & TM -->
+    <!-- HERO SECTION WITH WIDE BANNER -->
     <header class="hero">
-        <div class="logo-container">
-            <!-- Image loaded directly via URL -->
-            <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Mental Altitude Consulting Logo" class="main-logo">
-            <span class="tm-symbol">&trade;</span>
-        </div>
+        <img src="watermarked_img_7314482183545716051.png" alt="Mental Altitude Consulting Banner" class="hero-banner">
         
         <!-- Executive Name Kicker -->
         <div class="hero-name">Stephen E. Lagerberg, Ph.D.</div>
