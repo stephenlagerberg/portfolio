@@ -161,26 +161,39 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
 
-        /* --- Projects Section --- */
+        /* --- Portfolio Section --- */
         .projects {
             padding: 90px 5%;
-            background: #fff;
+            background: #fdfdfd;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .project-card {
-            max-width: 800px;
-            margin: 0 auto;
             padding: 40px;
             background: #f8fbfd;
             border-left: 6px solid var(--accent);
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card h3 {
             color: var(--primary);
             font-size: 1.6rem;
             margin-bottom: 15px;
+        }
+
+        .project-card p {
+            margin-bottom: 20px;
+            flex-grow: 1;
         }
 
         /* --- Section Defaults --- */
@@ -236,7 +249,7 @@
             text-align: center;
         }
 
-        /* --- Credentials & AI Section --- */
+        /* --- Credentials Section --- */
         .credentials-section {
             background-color: var(--primary);
             color: var(--light-text);
@@ -348,8 +361,8 @@
             </div>
         </div>
         <div class="nav-links">
-            <a href="#services">Expertise</a>
             <a href="#projects">Portfolio</a>
+            <a href="#services">Expertise</a>
             <a href="#credentials">Credentials</a>
             <a href="#contact">Contact</a>
         </div>
@@ -363,13 +376,22 @@
         <a href="#contact" class="cta-btn">Schedule a Consultation</a>
     </header>
 
-    <section id="projects">
+    <section id="projects" class="projects">
         <h2 class="section-title">Consulting Portfolio</h2>
-        <div class="project-card">
-            <h3>Cognitive Radar Dashboard</h3>
-            <p>A clinical-grade burnout tracking dashboard designed to optimize operational resilience in high-tempo environments.</p>
-            <br>
-            <a href="https://cognitive-radar.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 1rem;">View Live Dashboard</a>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <h3>Cognitive Radar Dashboard</h3>
+                <p>A clinical-grade burnout tracking dashboard designed to optimize operational resilience in high-tempo environments.</p>
+                <a href="https://cognitive-radar.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 1rem; text-align: center;">View Live Dashboard</a>
+            </div>
+
+            <div class="project-card">
+                <h3>Circadian Shift Optimizer</h3>
+                <p>A precision scheduling simulator for aviation shift rosters. Helps manage sleep latency and circadian alignment for ATC professionals.</p>
+                <a href="https://shift-work-optimizer.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 1rem; text-align: center;">View Shift Optimizer</a>
+            </div>
+
         </div>
     </section>
 
