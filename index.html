@@ -4,14 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Altitude Consulting | Stephen E. Lagerberg, Ph.D.</title>
+    <!-- Adding Tailwind for the new Bento Grid section -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* --- Color Palette & Variables --- */
         :root {
-            --primary: #0b1f3f;       /* Deep Navy */
-            --secondary: #1a5f7a;     /* Steel Blue */
-            --accent: #2779a7;        /* Aviation Blue */
-            --silver: #b0b8c4;        /* Metallic Silver for matching logo */
-            --light-bg: #fdfdfd;      /* Clean White */
+            --primary: #0b1f3f;      /* Deep Navy */
+            --secondary: #1a5f7a;    /* Steel Blue */
+            --accent: #2779a7;       /* Aviation Blue */
+            --silver: #b0b8c4;       /* Metallic Silver for matching logo */
+            --light-bg: #fdfdfd;     /* Clean White */
             --dark-text: #222222;
             --light-text: #ffffff;
         }
@@ -161,6 +163,19 @@
             box-shadow: 0 6px 15px rgba(0,0,0,0.2);
         }
 
+        /* --- Bento Grid Section (New) --- */
+        .bento-grid-section {
+            padding: 60px 5%;
+            background: #fafafa;
+        }
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
         /* --- Portfolio Section --- */
         .projects {
             padding: 90px 5%;
@@ -197,17 +212,13 @@
         }
 
         /* --- Section Defaults --- */
-        section {
-            padding: 90px 5%;
-        }
-
+        section { padding: 90px 5%; }
         .section-title {
             text-align: center;
             font-size: 2.4rem;
             color: var(--primary);
             margin-bottom: 60px;
         }
-
         .section-title::after {
             content: '';
             display: block;
@@ -218,7 +229,7 @@
             border-radius: 2px;
         }
 
-        /* --- Services/Expertise --- */
+        /* --- Services --- */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -242,112 +253,26 @@
             border-top-color: var(--primary);
         }
 
-        .service-card h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            text-align: center;
-        }
+        .service-card h3 { color: var(--primary); margin-bottom: 20px; font-size: 1.5rem; text-align: center; }
 
-        /* --- Credentials Section --- */
-        .credentials-section {
-            background-color: var(--primary);
-            color: var(--light-text);
-        }
-
-        .credentials-section .section-title {
-            color: var(--light-text);
-        }
-
-        .credentials-section .section-title::after {
-            background: var(--silver);
-        }
-
-        .cred-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 50px auto;
-        }
-
-        .cred-box {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 30px;
-            border-radius: 8px;
-            border-left: 4px solid var(--secondary);
-        }
-
-        .cred-box h4 {
-            margin-bottom: 15px;
-            color: var(--silver);
-            font-size: 1.2rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
-        }
-
-        .cert-list {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-            background: rgba(0,0,0,0.2);
-            padding: 30px;
-            border-radius: 8px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .cert-list li {
-            font-size: 0.95rem;
-            display: flex;
-            align-items: center;
-        }
-
-        .cert-list li::before {
-            content: "✓";
-            color: var(--silver);
-            font-weight: bold;
-            margin-right: 10px;
-            font-size: 1.2rem;
-        }
+        /* --- Credentials --- */
+        .credentials-section { background-color: var(--primary); color: var(--light-text); }
+        .credentials-section .section-title { color: var(--light-text); }
+        .credentials-section .section-title::after { background: var(--silver); }
+        .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto 50px auto; }
+        .cred-box { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .cred-box h4 { margin-bottom: 15px; color: var(--silver); font-size: 1.2rem; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
+        .cert-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; max-width: 1200px; margin: 0 auto; }
+        .cert-list li { font-size: 0.95rem; display: flex; align-items: center; }
+        .cert-list li::before { content: "✓"; color: var(--silver); font-weight: bold; margin-right: 10px; font-size: 1.2rem; }
 
         /* --- Contact --- */
-        .contact-section {
-            text-align: center;
-            background: #ffffff;
-        }
+        .contact-section { text-align: center; background: #ffffff; }
+        .contact-info { font-size: 1.3rem; max-width: 600px; margin: 0 auto; background: #f8fbfd; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e1e8f0; }
+        .contact-info a { color: var(--secondary); text-decoration: none; font-weight: bold; transition: color 0.2s; }
+        .contact-info a:hover { color: var(--primary); }
 
-        .contact-info {
-            font-size: 1.3rem;
-            max-width: 600px;
-            margin: 0 auto;
-            background: #f8fbfd;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
-            border: 1px solid #e1e8f0;
-        }
-
-        .contact-info a {
-            color: var(--secondary);
-            text-decoration: none;
-            font-weight: bold;
-            transition: color 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: #061020;
-            color: #6a7b92;
-            text-align: center;
-            padding: 25px;
-            font-size: 0.95rem;
-        }
+        footer { background: #061020; color: #6a7b92; text-align: center; padding: 25px; font-size: 0.95rem; }
     </style>
 </head>
 <body>
@@ -376,22 +301,40 @@
         <a href="#contact" class="cta-btn">Schedule a Consultation</a>
     </header>
 
+    <!-- New Bento Grid Hub -->
+    <section class="bento-grid-section">
+        <div class="bento-grid">
+            <a href="cognitive-radar.html" class="group bg-zinc-900 border border-zinc-800 hover:border-blue-500 rounded-3xl p-6 transition space-y-4 shadow-lg text-white">
+                <div class="w-12 h-12 bg-blue-500/20 rounded-2xl flex items-center justify-center text-blue-400 font-bold text-xl">R</div>
+                <h2 class="text-xl font-semibold">Cognitive Radar</h2>
+                <p class="text-zinc-400 text-sm">Clinical-grade burnout tracking.</p>
+            </a>
+            <a href="shift-optimizer.html" class="group bg-zinc-900 border border-zinc-800 hover:border-amber-500 rounded-3xl p-6 transition space-y-4 shadow-lg text-white">
+                <div class="w-12 h-12 bg-amber-500/20 rounded-2xl flex items-center justify-center text-amber-400 font-bold text-xl">S</div>
+                <h2 class="text-xl font-semibold">Shift Optimizer</h2>
+                <p class="text-zinc-400 text-sm">Aviation shift roster simulator.</p>
+            </a>
+            <a href="productivity.html" class="group bg-zinc-900 border border-zinc-800 hover:border-emerald-500 rounded-3xl p-6 transition space-y-4 shadow-lg text-white">
+                <div class="w-12 h-12 bg-emerald-500/20 rounded-2xl flex items-center justify-center text-emerald-400 font-bold text-xl">P</div>
+                <h2 class="text-xl font-semibold">Peak Mapper</h2>
+                <p class="text-zinc-400 text-sm">Biological rhythm analysis.</p>
+            </a>
+        </div>
+    </section>
+
     <section id="projects" class="projects">
         <h2 class="section-title">Consulting Portfolio</h2>
         <div class="projects-grid">
-            
             <div class="project-card">
                 <h3>Cognitive Radar Dashboard</h3>
                 <p>A clinical-grade burnout tracking dashboard designed to optimize operational resilience in high-tempo environments.</p>
                 <a href="https://cognitive-radar.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 1rem; text-align: center;">View Live Dashboard</a>
             </div>
-
             <div class="project-card">
                 <h3>Circadian Shift Optimizer</h3>
                 <p>A precision scheduling simulator for aviation shift rosters. Helps manage sleep latency and circadian alignment for ATC professionals.</p>
                 <a href="https://shift-work-optimizer.vercel.app/" class="cta-btn" style="padding: 10px 20px; font-size: 1rem; text-align: center;">View Shift Optimizer</a>
             </div>
-
         </div>
     </section>
 
