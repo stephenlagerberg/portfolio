@@ -1,6 +1,7 @@
-# Portfolio
+Portfolio
 
-## Mental Altitude Consulting
+Mental Altitude Consulting
 
-### [Cognitive Radar Dashboard](https://cognitive-radar.vercel.app/)
-A clinical-grade burnout tracking dashboard for Mental Altitude Consulting | [View Code](https://github.com/stephenlagerberg/cognitive-radar)
+Cognitive Radar Dashboard
+
+A clinical-grade burnout tracking dashboard for Mental Altitude Consulting | View Code
