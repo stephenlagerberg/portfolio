@@ -5,81 +5,59 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mental Altitude Consulting | Stephen E. Lagerberg, Ph.D.</title>
     <style>
-        :root {
-            --primary: #0b1f3f; --secondary: #1a5f7a; --accent: #2779a7;
-            --silver: #b0b8c4; --light-bg: #fdfdfd; --dark-text: #222222; --light-text: #ffffff;
-        }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; scroll-behavior: smooth; }
+        :root { --primary: #0b1f3f; --secondary: #1a5f7a; --accent: #2779a7; --silver: #b0b8c4; --light-bg: #fdfdfd; --dark-text: #222222; --light-text: #ffffff; }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, sans-serif; scroll-behavior: smooth; }
         body { line-height: 1.6; color: var(--dark-text); background-color: var(--light-bg); }
-
-        nav { background-color: var(--primary); color: var(--light-text); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-wrap: wrap; }
-        .nav-brand { display: flex; align-items: center; gap: 15px; font-size: 1.2rem; font-weight: 600; text-transform: uppercase; color: var(--silver); }
+        nav { background-color: var(--primary); color: var(--light-text); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .nav-brand { display: flex; align-items: center; gap: 15px; font-weight: 600; text-transform: uppercase; color: var(--silver); }
         .nav-logo { height: 50px; width: auto; }
-        .nav-brand-text { display: flex; flex-direction: column; }
-        .nav-brand-name { font-weight: 500; color: var(--light-text); font-size: 0.85rem; text-transform: none; margin-top: -2px; }
-        .nav-links a { color: var(--light-text); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
-        .nav-links a:hover { color: var(--silver); }
-
+        .nav-links a { color: var(--light-text); text-decoration: none; margin-left: 25px; font-weight: 500; }
         .hero { background: radial-gradient(circle at center, #ffffff 0%, #eef2f6 100%); padding: 60px 5% 100px; text-align: center; border-bottom: 4px solid var(--secondary); }
         .hero-banner { width: 100%; max-width: 1100px; border-radius: 12px; margin: 0 auto 40px; box-shadow: 0 10px 30px rgba(26, 95, 122, 0.15); }
-        .hero-name { color: var(--primary); font-weight: 700; margin-bottom: 15px; font-size: 1.8rem; }
-        .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; max-width: 900px; margin: 0 auto 15px; }
-        .hero h2 { font-size: 1.25rem; color: var(--secondary); max-width: 800px; margin: 0 auto 35px; font-weight: 400; }
         .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--light-text); padding: 16px 35px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: 0.3s; }
         .cta-btn:hover { background-color: var(--primary); transform: translateY(-3px); }
-
-        section { padding: 90px 5%; }
-        .section-title { text-align: center; font-size: 2.4rem; color: var(--primary); margin-bottom: 60px; }
-        .section-title::after { content: ''; display: block; width: 70px; height: 4px; background: var(--secondary); margin: 15px auto 0; }
-
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .service-card { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 5px solid var(--secondary); transition: 0.3s; }
-        .service-card:hover { transform: translateY(-8px); border-top-color: var(--primary); }
-        .service-card h3 { color: var(--primary); margin-bottom: 20px; text-align: center; }
-
-        .about-section { background-color: #f3f6f9; }
-        .about-content { max-width: 900px; margin: 0 auto; font-size: 1.15rem; color: #444; }
-
-        .credentials-section { background-color: var(--primary); color: var(--light-text); }
-        .credentials-section .section-title { color: var(--light-text); }
-        .credentials-section .section-title::after { background: var(--silver); }
-        .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto 50px; }
-        .cred-box { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--secondary); }
-        .cred-box h4 { margin-bottom: 15px; color: var(--silver); border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 10px; }
-        .cert-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; max-width: 1200px; margin: 0 auto; }
-        .cert-list li::before { content: "✓ "; color: var(--silver); margin-right: 10px; }
-
-        .contact-info { text-align: center; font-size: 1.3rem; max-width: 600px; margin: 0 auto; background: #f8fbfd; padding: 40px; border-radius: 12px; border: 1px solid #e1e8f0; }
-        .contact-info a { color: var(--secondary); text-decoration: none; font-weight: bold; }
-        footer { background: #061020; color: #6a7b92; text-align: center; padding: 25px; font-size: 0.95rem; }
+        section { padding: 80px 5%; }
+        .section-title { text-align: center; font-size: 2.2rem; color: var(--primary); margin-bottom: 50px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1100px; margin: 0 auto; }
+        .service-card { background: #fff; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); border-top: 4px solid var(--secondary); }
+        .about-content { max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; max-width: 1100px; margin: 0 auto 40px; }
+        .cred-box { background: #f3f6f9; padding: 25px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .cert-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 10px; max-width: 1100px; margin: 0 auto; }
+        .cert-list li { font-size: 0.9rem; margin-bottom: 5px; }
+        footer { background: #061020; color: #6a7b92; text-align: center; padding: 20px; font-size: 0.9rem; }
     </style>
 </head>
 <body>
+
     <nav>
-        <div class="nav-brand">
-            <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Logo" class="nav-logo">
-            <div class="nav-brand-text">Mental Altitude Consulting&trade; <span class="nav-brand-name">Stephen E. Lagerberg, Ph.D.</span></div>
-        </div>
+        <div class="nav-brand"><img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Logo" class="nav-logo"> Mental Altitude Consulting</div>
         <div class="nav-links">
-            <a href="#services">Expertise</a> <a href="#about">About</a> <a href="#credentials">Credentials</a> <a href="#projects">Portfolio</a> <a href="#contact">Contact</a>
+            <a href="#services">Expertise</a>
+            <a href="#about">About</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
     <header class="hero">
         <img src="linkedin-banner.png" alt="Banner" class="hero-banner">
-        <div class="hero-name">Stephen E. Lagerberg, Ph.D.</div>
         <h1>Mastering the Human Element in High-Stakes Environments.</h1>
-        <h2>Consulting at the intersection of cognitive neuroscience, human factors engineering, and strategic AI integration.</h2>
-        <a href="#contact" class="cta-btn">Schedule a Consultation</a>
+        <a href="#contact" class="cta-btn" style="margin-top: 20px;">Schedule a Consultation</a>
     </header>
 
     <section id="projects">
-        <h2 class="section-title">Consulting Portfolio</h2>
-        <div class="services-grid" style="max-width: 800px;">
+        <h2 class="section-title">Decision Support Suite</h2>
+        <div class="services-grid">
             <div class="service-card">
-                <h3>Cognitive Radar Dashboard</h3>
-                <p>A clinical-grade burnout tracking dashboard designed to optimize operational resilience in high-tempo environments.</p>
-                <br><a href="https://cognitive-radar.vercel.app/" class="cta-btn">View Live Dashboard</a>
+                <h3>Cognitive Radar</h3>
+                <p>Clinical-grade burnout tracking and cognitive exhaustion analytics.</p>
+                <a href="https://cognitive-radar.vercel.app/" class="cta-btn" style="margin-top:15px; padding: 10px 20px;">Launch Dashboard</a>
+            </div>
+            <div class="service-card">
+                <h3>Shift & Rest Optimizer</h3>
+                <p>Circadian-aware rostering and cognitive recovery planning tool.</p>
+                <a href="https://shift-work-optimizer.vercel.app/" class="cta-btn" style="margin-top:15px; padding: 10px 20px;">Launch Optimizer</a>
             </div>
         </div>
     </section>
@@ -87,56 +65,38 @@
     <section id="services">
         <h2 class="section-title">Core Consulting Expertise</h2>
         <div class="services-grid">
-            <div class="service-card">
-                <h3>Human Factors & Aviation</h3>
-                <p>SMS auditing, situational awareness protocols, and human-centric workflow design for zero-margin aerospace environments.</p>
-            </div>
-            <div class="service-card">
-                <h3>Human-AI Teaming</h3>
-                <p>Guiding organizations in safely integrating automated tools into rapid decision-making pipelines while reducing cognitive friction.</p>
-            </div>
-            <div class="service-card">
-                <h3>Operational Resilience</h3>
-                <p>Evidence-based fatigue management and cognitive conditioning to sustain peak output and prevent burnout.</p>
-            </div>
+            <div class="service-card"><h3>Human Factors & Aviation</h3><p>SMS auditing, situational awareness protocols, and human-centric workflow design for zero-margin aerospace environments.</p></div>
+            <div class="service-card"><h3>Human-AI Teaming</h3><p>Guiding organizations in safely integrating automated tools into rapid decision-making pipelines while reducing cognitive friction.</p></div>
+            <div class="service-card"><h3>Operational Resilience</h3><p>Evidence-based fatigue management and cognitive conditioning to sustain peak output and prevent burnout.</p></div>
         </div>
     </section>
 
     <section id="about" class="about-section">
         <h2 class="section-title">About Dr. Stephen E. Lagerberg</h2>
         <div class="about-content">
-            <p>I specialize in human performance under pressure. With a Ph.D. in Performance Psychology and over a decade as a U.S. Navy Air Traffic Controller, I combine operational experience with academic rigor to help organizations protect human capital.</p>
+            <p>I hold a Ph.D. in Performance Psychology and spent over a decade as a U.S. Navy Air Traffic Controller. I combine this operational experience with academic rigor to help organizations protect human capital.</p>
         </div>
     </section>
 
     <section id="credentials" class="credentials-section">
         <h2 class="section-title">Credentials & Publications</h2>
         <div class="cred-grid">
-            <div class="cred-box">
-                <h4>Academic Background</h4>
-                <p><strong>Ph.D. in General Psychology</strong><br>Emphasis in Performance Psychology (2021). Adjunct Professor of Cognitive Neuroscience.</p>
-            </div>
-            <div class="cred-box">
-                <h4>Key Publications</h4>
-                <p><em>Air Traffic Controller Health and Well-Being</em> (2023)<br><em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em> (2021)</p>
-            </div>
+            <div class="cred-box"><h4>Academic Background</h4><p>Ph.D. in General Psychology (Emphasis in Performance Psychology). Adjunct Professor of Cognitive Neuroscience.</p></div>
+            <div class="cred-box"><h4>Key Publications</h4><p><em>Air Traffic Controller Health and Well-Being</em> (2023)<br><em>A Descriptive Study of Burnout in Military Air Traffic Controllers</em> (2021)</p></div>
         </div>
         <ul class="cert-list">
-            <li>Design Thinking for Innovation</li><li>UX Design Foundations</li><li>Generative AI & Applications</li><li>Prompt Engineering</li>
+            <li>✓ Design Thinking for Innovation</li><li>✓ UX Design Foundations</li><li>✓ Generative AI & Applications</li><li>✓ Prompt Engineering</li><li>✓ AI Intro & Applications (IBM)</li><li>✓ Use AI Responsibly</li>
         </ul>
     </section>
 
-    <section id="contact" class="contact-section">
+    <section id="contact">
         <h2 class="section-title">Contact</h2>
-        <div class="contact-info">
-            <p>📧 <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a></p>
-            <p>📞 <strong>(361) 343-6278</strong></p>
-            <p><a href="https://github.com/stephenlagerberg/portfolio" target="_blank">View GitHub Portfolio</a></p>
+        <div class="cred-box" style="text-align:center; max-width: 600px; margin: auto;">
+            <p>📧 stephenlagerberg@gmail.com</p>
+            <p>📞 (361) 343-6278</p>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Mental Altitude Consulting&trade; | Stephen E. Lagerberg, Ph.D. All Rights Reserved.</p>
-    </footer>
+    <footer>&copy; 2026 Mental Altitude Consulting | Stephen E. Lagerberg, Ph.D.</footer>
 </body>
 </html>
