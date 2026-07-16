@@ -6,78 +6,94 @@
     <title>Mental Altitude Consulting | Stephen E. Lagerberg, Ph.D.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        :root { --primary: #0b1f3f; --secondary: #1a5f7a; --accent: #2779a7; --silver: #b0b8c4; --light-bg: #fdfdfd; --dark-text: #222222; --light-text: #ffffff; }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
-        body { line-height: 1.6; color: var(--dark-text); background-color: var(--light-bg); }
-        nav { background-color: var(--primary); color: var(--light-text); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
-        .nav-brand { display: flex; align-items: center; gap: 15px; font-size: 1.2rem; font-weight: 600; color: var(--silver); text-transform: uppercase; }
-        .nav-logo { height: 50px; width: auto; }
-        .nav-links a { color: var(--light-text); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; }
-        .hero { background: radial-gradient(circle at center, #ffffff 0%, #eef2f6 100%); padding: 60px 5% 100px; text-align: center; border-bottom: 4px solid var(--secondary); }
-        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--light-text); padding: 16px 35px; border-radius: 4px; text-decoration: none; font-weight: bold; }
-        section { padding: 90px 5%; }
-        .section-title { text-align: center; font-size: 2.4rem; color: var(--primary); margin-bottom: 60px; }
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto; }
-        .project-card { padding: 40px; background: #f8fbfd; border-left: 6px solid var(--accent); border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.05); }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
-        .service-card { background: #fff; padding: 40px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 5px solid var(--secondary); }
-        .credentials-section { background-color: var(--primary); color: var(--light-text); padding: 90px 5%; }
-        .cred-box { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--secondary); margin-bottom: 20px; }
-        .cert-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; margin-top: 30px; }
-        .cert-list li::before { content: "✓ "; color: var(--silver); margin-right: 10px; }
+        :root { --primary: #0b1f3f; --secondary: #1a5f7a; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #fdfdfd; }
     </style>
 </head>
-<body>
-    <nav>
-        <div class="nav-brand">
-            <img src="https://i.postimg.cc/hGgZ8qhB/logo.png" alt="Logo" class="nav-logo">
-            <div>Mental Altitude Consulting<div style="font-size: 0.8rem;">Stephen E. Lagerberg, Ph.D.</div></div>
-        </div>
-        <div class="nav-links">
-            <a href="#projects">Portfolio</a>
-            <a href="#services">Expertise</a>
-            <a href="#credentials">Credentials</a>
-            <a href="#contact">Contact</a>
-        </div>
+<body class="text-zinc-900">
+
+    <nav class="bg-[#0b1f3f] text-white p-5 flex justify-between items-center shadow-lg">
+        <div class="font-bold uppercase tracking-widest text-zinc-400">Mental Altitude Consulting</div>
     </nav>
-    <header class="hero">
-        <h1>Mastering the Human Element in High-Stakes Environments.</h1>
-        <a href="#contact" class="cta-btn">Schedule a Consultation</a>
-    </header>
-    <section class="bg-gray-50 py-12">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <a href="cognitive-radar.html" class="block bg-white p-6 rounded-2xl border border-gray-200"><h3>Cognitive Radar</h3></a>
-                <a href="shift-optimizer.html" class="block bg-white p-6 rounded-2xl border border-gray-200"><h3>Shift Optimizer</h3></a>
-                <a href="productivity.html" class="block bg-white p-6 rounded-2xl border border-gray-200"><h3>Peak Mapper</h3></a>
+
+    <section id="chrono" class="py-12 px-5 max-w-4xl mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-8 text-[#0b1f3f]">Performance-Adjusted Chronograph</h2>
+        
+        <div class="bg-zinc-900 text-white p-8 rounded-2xl shadow-2xl border border-zinc-700">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="space-y-4">
+                    <label class="text-xs uppercase font-bold text-zinc-400">Shift Start Hour (0-23)</label>
+                    <input type="number" id="shiftStart" value="23" min="0" max="23" class="w-full bg-zinc-800 p-3 rounded border border-zinc-700" oninput="calculateBioStatus()">
+                    
+                    <label class="text-xs uppercase font-bold text-zinc-400 block">MBI Exhaustion Score</label>
+                    <input type="range" id="mbiExhaustion" min="0" max="100" value="50" class="w-full" oninput="calculateBioStatus()">
+                </div>
+
+                <div class="bg-zinc-800 p-6 rounded-xl border border-zinc-700">
+                    <div id="statusIndicator" class="text-xs uppercase font-bold tracking-widest mb-2">Stable</div>
+                    <div id="performanceDisplay" class="text-4xl font-mono text-white mb-1">100%</div>
+                    <div id="restAdvice" class="text-sm font-semibold text-emerald-400 italic mb-2">Optimal window active.</div>
+                    <p id="performanceAdvice" class="text-xs text-zinc-400">Input your metrics to generate your rest protocol.</p>
+                </div>
+            </div>
+
+            <div class="mt-8 border-t border-zinc-700 pt-6">
+                <h4 class="text-zinc-400 text-xs uppercase font-bold mb-4">Calculated Risk/Rest Curve</h4>
+                <div id="riskChart" class="flex items-end h-24 gap-1 w-full bg-zinc-950 p-2 rounded">
+                    <!-- Dynamic chart bars injected here -->
+                </div>
             </div>
         </div>
     </section>
-    <section id="projects">
-        <h2 class="section-title">Consulting Portfolio</h2>
-        <div class="projects-grid">
-            <div class="project-card"><h3>Cognitive Radar Dashboard</h3><p>Clinical-grade burnout tracking for high-tempo operations.</p></div>
-            <div class="project-card"><h3>Circadian Shift Optimizer</h3><p>Precision scheduling for aviation shift rosters.</p></div>
-        </div>
-    </section>
-    <section id="services">
-        <h2 class="section-title">Core Consulting Expertise</h2>
-        <div class="services-grid">
-            <div class="service-card"><h3>Human Factors & Aviation</h3><p>SMS auditing and human-centric workflow design.</p></div>
-            <div class="service-card"><h3>Human-AI Teaming</h3><p>Integrating automation into decision-making pipelines.</p></div>
-            <div class="service-card"><h3>Operational Resilience</h3><p>Evidence-based fatigue management.</p></div>
-        </div>
-    </section>
-    <section id="credentials" class="credentials-section">
-        <h2 class="section-title">Credentials & Publications</h2>
-        <div class="cred-box"><h4>Ph.D. in General Psychology</h4><p>Emphasis in Performance Psychology (2021).</p></div>
-        <div class="cred-box"><h4>Key Publications</h4><p><em>Air Traffic Controller Health and Well-Being (2023)</em></p></div>
-        <ul class="cert-list">
-            <li>Design Thinking for Innovation</li>
-            <li>Foundations of User Experience (UX)</li>
-            <li>Generative AI Applications</li>
-        </ul>
-    </section>
-    <section id="contact"><h2 class="section-title">Contact</h2><p class="text-center">stephenlagerberg@gmail.com</p></section>
+
+    <script>
+        function calculateBioStatus() {
+            const shift = parseInt(document.getElementById('shiftStart').value);
+            const fatigue = parseInt(document.getElementById('mbiExhaustion').value);
+            const now = new Date().getHours();
+            
+            // Performance logic
+            const isNight = now >= 1 && now <= 5;
+            let performance = 100 - (isNight ? 35 : 0) - (fatigue * 0.5);
+            performance = Math.max(0, Math.floor(performance));
+            
+            const display = document.getElementById('performanceDisplay');
+            const status = document.getElementById('statusIndicator');
+            const advice = document.getElementById('performanceAdvice');
+            const rest = document.getElementById('restAdvice');
+
+            display.innerText = performance + "%";
+            
+            // Dynamic Risk/Rest Logic
+            if (performance < 50) {
+                status.innerText = "High Friction Risk";
+                status.className = "text-xs uppercase font-bold tracking-widest mb-2 text-red-500";
+                advice.innerText = "Immediate strategic disengagement required. Potential for cognitive failure.";
+                rest.innerText = "Rest Protocol: 15-min tactical nap.";
+            } else if (performance < 75) {
+                status.innerText = "Fatigue Threshold";
+                status.className = "text-xs uppercase font-bold tracking-widest mb-2 text-amber-500";
+                advice.innerText = "Performance degraded. Avoid high-stakes decision-making.";
+                rest.innerText = "Rest Protocol: 5-min cognitive break.";
+            } else {
+                status.innerText = "Operational Peak";
+                status.className = "text-xs uppercase font-bold tracking-widest mb-2 text-emerald-400";
+                advice.innerText = "Peak operational window. Execute complex tasks now.";
+                rest.innerText = "Rest Protocol: Normal ops.";
+            }
+
+            // Generate Risk Curve Visual
+            const chart = document.getElementById('riskChart');
+            chart.innerHTML = '';
+            for(let i=0; i<24; i++) {
+                const bar = document.createElement('div');
+                const height = Math.random() * 40 + 40; // Simulated risk curve
+                bar.style.height = `${height}%`;
+                bar.className = height > 70 ? 'flex-1 bg-red-500' : 'flex-1 bg-emerald-500';
+                chart.appendChild(bar);
+            }
+        }
+        calculateBioStatus();
+    </script>
 </body>
 </html>
