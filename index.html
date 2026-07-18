@@ -520,10 +520,16 @@
     <!-- Invisible Visitor Counter Script -->
     <script>
       (function() {
-        // Your actual Cloudflare Worker URL
+        // 1. Check for your secret browser pass
+        if (localStorage.getItem('exempt_me') === 'true') {
+          console.log('Admin detected: Your visit was not counted.');
+          return; // This stops the script entirely
+        }
+
+        // 2. Your actual Cloudflare Worker URL
         const workerUrl = 'https://my-portfolio-counter.stephenlagerberg.workers.dev';
 
-        // Fire the tracking request asynchronously so your portfolio loads instantly
+        // 3. Fire the tracking request
         fetch(workerUrl, {
           method: 'POST',
           mode: 'cors',
@@ -536,8 +542,6 @@
           return response.json();
         })
         .then(data => {
-          // Logic runs silently in the background. 
-          // If you ever want to check the count while testing, open your browser console (F12)
           console.log(`Total portfolio visits: ${data.count}`);
         })
         .catch(err => console.error('Counter error:', err));
