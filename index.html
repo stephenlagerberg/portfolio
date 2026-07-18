@@ -517,5 +517,31 @@
         <p>&copy; 2026 Mental Altitude Consulting&trade; | Stephen E. Lagerberg, Ph.D. All Rights Reserved.</p>
     </footer>
 
+    <!-- Invisible Visitor Counter Script -->
+    <script>
+      (function() {
+        // Your actual Cloudflare Worker URL
+        const workerUrl = 'https://my-portfolio-counter.stephenlagerberg.workers.dev';
+
+        // Fire the tracking request asynchronously so your portfolio loads instantly
+        fetch(workerUrl, {
+          method: 'POST',
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        })
+        .then(response => {
+          if (!response.ok) throw new Error('Network error');
+          return response.json();
+        })
+        .then(data => {
+          // Logic runs silently in the background. 
+          // If you ever want to check the count while testing, open your browser console (F12)
+          console.log(`Total portfolio visits: ${data.count}`);
+        })
+        .catch(err => console.error('Counter error:', err));
+      })();
+    </script>
 </body>
 </html>
