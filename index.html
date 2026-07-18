@@ -3,12 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Description for SEO -->
     <meta name="description" content="Mental Altitude Consulting provides performance psychology for high-stakes teams, specializing in mitigating cognitive fatigue, human factors engineering, and burnout prevention for executives.">
-    <!-- Optimized Title Tag -->
     <title>Mental Altitude Consulting | Executive Performance Psychology & Cognitive Fatigue Mitigation</title>
     
-    <!-- Favicon (Updated to local path) -->
+    <!-- Favicon -->
     <link rel="icon" type="image/png" href="assets/logo.png">
 
     <!-- Open Graph / LinkedIn / Facebook -->
@@ -25,7 +23,7 @@
     <meta property="twitter:description" content="Applying cognitive neuroscience and human factors engineering to mitigate fatigue and optimize human performance in zero-margin environments.">
     <meta property="twitter:image" content="https://stephenlagerberg.github.io/portfolio/assets/linkedin-banner.png">
 
-    <!-- Schema Markup (Structured Data) -->
+    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,19 +38,14 @@
           "description": "Applying cognitive neuroscience and human factors engineering to mitigate fatigue and optimize human performance in zero-margin environments.",
           "telephone": "+1-361-343-6278",
           "email": "stephenlagerberg@gmail.com",
-          "founder": {
-            "@id": "https://stephenlagerberg.github.io/portfolio/#person"
-          }
+          "founder": { "@id": "https://stephenlagerberg.github.io/portfolio/#person" }
         },
         {
           "@type": "Person",
           "@id": "https://stephenlagerberg.github.io/portfolio/#person",
           "name": "Stephen E. Lagerberg, Ph.D.",
           "jobTitle": "Performance Psychologist & Air Traffic Manager",
-          "alumniOf": {
-            "@type": "CollegeOrUniversity",
-            "name": "Grand Canyon University"
-          },
+          "alumniOf": { "@type": "CollegeOrUniversity", "name": "Grand Canyon University" },
           "url": "https://stephenlagerberg.github.io/portfolio/"
         }
       ]
@@ -60,16 +53,44 @@
     </script>
 
     <style>
-        /* [Your existing styles remain unchanged] */
         :root { --primary: #0b1f3f; --secondary: #1a5f7a; --accent: #2779a7; --silver: #b0b8c4; --light-bg: #fdfdfd; --dark-text: #222222; --light-text: #ffffff; }
-        /* ... (Keep the rest of your existing CSS here) ... */
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; scroll-behavior: smooth; }
+        body { line-height: 1.6; color: var(--dark-text); background-color: var(--light-bg); }
+        nav { background-color: var(--primary); color: var(--light-text); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 4px 12px rgba(0,0,0,0.15); flex-wrap: wrap; }
+        .nav-brand { display: flex; align-items: center; gap: 15px; font-size: 1.2rem; font-weight: 600; letter-spacing: 1px; color: var(--silver); text-transform: uppercase; }
+        .nav-logo { height: 50px; width: auto; }
+        .nav-brand-text { display: flex; flex-direction: column; justify-content: center; }
+        .nav-brand-name { font-weight: 500; color: var(--light-text); font-size: 0.85rem; text-transform: none; margin-top: -2px; }
+        .nav-links { display: flex; align-items: center; }
+        .nav-links a { color: var(--light-text); text-decoration: none; margin-left: 25px; font-weight: 500; font-size: 0.95rem; transition: color 0.3s; }
+        .hero { background: radial-gradient(circle at center, #ffffff 0%, #eef2f6 100%); padding: 60px 5% 100px; text-align: center; border-bottom: 4px solid var(--secondary); }
+        .hero-banner { width: 100%; max-width: 1100px; height: auto; border-radius: 12px; box-shadow: 0 10px 30px rgba(26, 95, 122, 0.15); margin: 0 auto 40px auto; display: block; }
+        .hero-name { color: var(--primary); font-weight: 700; margin-bottom: 15px; font-size: 1.8rem; }
+        .hero h1 { font-size: 2.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 700; max-width: 900px; margin-left: auto; margin-right: auto; }
+        .hero h2 { font-size: 1.25rem; color: var(--secondary); font-weight: 400; max-width: 800px; margin: 0 auto 35px auto; }
+        .cta-btn { display: inline-block; background-color: var(--secondary); color: var(--light-text); padding: 16px 35px; border-radius: 4px; text-decoration: none; font-weight: bold; transition: all 0.3s; }
+        .cta-btn:hover { background-color: var(--primary); transform: translateY(-3px); }
+        section { padding: 90px 5%; }
+        .section-title { text-align: center; font-size: 2.4rem; color: var(--primary); margin-bottom: 60px; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto; }
+        .service-card { background: #fff; padding: 40px 30px; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.06); border-top: 5px solid var(--secondary); }
+        .about-section { background-color: #f3f6f9; }
+        .about-content { max-width: 900px; margin: 0 auto; font-size: 1.15rem; color: #444; text-align: justify; }
+        .credentials-section { background-color: var(--primary); color: var(--light-text); }
+        .cred-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; max-width: 1200px; margin: 0 auto 50px auto; }
+        .cred-box { background: rgba(255, 255, 255, 0.05); padding: 30px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .cert-list { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 15px; background: rgba(0,0,0,0.2); padding: 30px; border-radius: 8px; max-width: 1200px; margin: 0 auto; }
+        .cert-list li::before { content: "✓"; color: var(--silver); margin-right: 10px; }
+        .contact-section { text-align: center; background: #ffffff; }
+        .contact-info { font-size: 1.3rem; max-width: 600px; margin: 0 auto; background: #f8fbfd; padding: 40px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); border: 1px solid #e1e8f0; }
+        footer { background: #061020; color: #6a7b92; text-align: center; padding: 25px; font-size: 0.95rem; }
+        .fab-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--accent); color: var(--light-text); padding: 15px 25px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 15px rgba(0,0,0,0.25); z-index: 9999; display: flex; align-items: center; gap: 10px; }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="nav-brand">
-            <!-- Updated Logo Path -->
             <img src="assets/logo.png" alt="Mental Altitude Consulting Logo" class="nav-logo">
             <div class="nav-brand-text">
                 Mental Altitude Consulting&trade;
@@ -86,16 +107,14 @@
     </nav>
 
     <header class="hero">
-        <!-- Updated Banner Path -->
         <img src="assets/linkedin-banner.png" alt="Mental Altitude Consulting Banner" class="hero-banner">
-
         <div class="hero-name">Stephen E. Lagerberg, Ph.D.</div>
-
         <h1>Mastering the Human Element in High-Stakes Environments.</h1>
         <h2>From the air traffic control tower to the enterprise boardroom. Mental Altitude Consulting applies cognitive neuroscience and human factors engineering to mitigate cognitive fatigue in corporate leadership and optimize operational safety in zero-margin environments.</h2>
-        <a href="https://calendar.app.google/Xt23YE91taaE1D6y7" target="_blank" rel="noopener noreferrer" class="cta-btn">Schedule a Consultation</a>
+        <a href="https://calendar.app.google/Xt23YE91taaE1D6y7" target="_blank" class="cta-btn">Schedule a Consultation</a>
     </header>
 
-    <!-- ... [The rest of your body content remains exactly the same] ... -->
+    <!-- [Keep your original Sections (Projects, Services, About, Credentials, Contact, Footer) exactly as they were below this point] -->
+
 </body>
 </html>
