@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Meta Description for SEO -->
+    <!-- Added Meta Description for SEO -->
     <meta name="description" content="Mental Altitude Consulting provides performance psychology for high-stakes teams, specializing in mitigating cognitive fatigue, human factors engineering, and burnout prevention for executives.">
     <!-- Optimized Title Tag -->
     <title>Mental Altitude Consulting | Executive Performance Psychology & Cognitive Fatigue Mitigation</title>
@@ -361,7 +361,7 @@
             text-align: center;
         }
 
-        /* --- Contact --- */
+        /* --- Hybrid Contact Section --- */
         .contact-section {
             text-align: center;
             background: #ffffff;
@@ -378,19 +378,16 @@
             border: 1px solid #e1e8f0;
         }
 
-        .contact-info a {
+        .secondary-contact {
+            margin-top: 25px;
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+        .contact-info a.email-link {
             color: var(--secondary);
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.2s;
-        }
-
-        .contact-info a:hover {
-            color: var(--primary);
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
         }
 
         /* --- Footer --- */
@@ -594,10 +591,11 @@
         <h2 class="section-title">Ready to Elevate Your Team?</h2>
         <div class="contact-info">
             <p style="margin-bottom: 30px; color: #555;">Let us connect to discuss how Mental Altitude Consulting can help you optimize human performance, safety, and leadership.</p>
-            <p>📧 <a href="mailto:stephenlagerberg@gmail.com">stephenlagerberg@gmail.com</a></p>
-            <p>📞 <strong>(361) 343-6278</strong></p>
-            <p style="margin-top: 30px; font-size: 1.1rem;">
-                🌐 <a href="https://github.com/stephenlagerberg/portfolio" target="_blank">View Technical Portfolio on GitHub</a>
+            
+            <a href="https://calendar.app.google/Xt23YE91taaE1D6y7" target="_blank" rel="noopener noreferrer" class="cta-btn">Book a Consultation</a>
+            
+            <p class="secondary-contact">
+                Prefer a direct inquiry? <a href="mailto:stephenlagerberg@gmail.com" class="email-link">Email me</a> or call <strong>(361) 343-6278</strong>.
             </p>
         </div>
     </section>
